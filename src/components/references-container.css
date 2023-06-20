@@ -1,0 +1,48 @@
+.reference-block {
+    margin-bottom: 1.875rem;
+}
+
+.reference-block:last-child {
+    margin-bottom: 0rem;
+}
+
+.reference-text h3 {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.reference-text p {
+    font-style: italic;
+}
+
+.reference-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-right: 5px;
+
+}
+
+.reference-image {
+    margin-bottom: 0.625rem;
+}
+
+.icon-star {
+    display: block;
+    width: 12px;
+    height: 12px;
+}
+
+.img-circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+

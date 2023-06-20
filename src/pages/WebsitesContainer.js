@@ -1,0 +1,79 @@
+const WebsitesContainer = () => {
+    return (
+        <div id="websites-container">
+        <div data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" className="scroll-container rounded-2" tabIndex="0">
+            <article>
+                <h1>Web Design &amp; Frontend Development</h1>
+                <section className="secondary-section post-item" id="scrollspyHeading1">
+                    <h2>Mokeez - Digital Marketing Agency</h2>
+                    <p><span>Industry:</span> Advertising Services, IT Services</p>
+                    <p><span>Technology Leveraged:</span> HTML, CSS3, Bootstrap 3.0, jQuery</p>
+                    <div className="container-buttons-inline">
+                        <a href="portfolio/web-design-front-end/mokeez/" className="btn btn-primary" title="Visit Site" target="_blank" rel="noopener noreferrer">Visit Site</a>
+                        <a href="https://www.mokeez.com/blog/" className="btn btn-primary" title="Visit Live Blog" target="_blank" rel="noopener noreferrer">Visit Live Blog</a>
+                    </div>
+                    <a href="portfolio/web-design-front-end/mokeez/" title="Visit Site" target="_blank" rel="noopener noreferrer">
+                        <picture>
+                            <source media="(max-width: 767px)" srcSet="images/website/mokeez-index-page-mobile.jpg"/>
+                            <source media="(min-width: 768px)" srcSet="images/website/mokeez-index-page-screen.jpg"/>
+                            <img src="images/website/mokeez-index-page-screen.jpg" alt="Mokeez Website" className="img-responsive"/>
+                        </picture>
+                    </a>
+                </section>
+                <h2 >Mokeez - Digital Marketing Agency</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut nisi eget nunc semper congue. Curabitur eu mattis neque. Nulla id ornare leo. Nullam imperdiet pulvinar consequat. Donec a volutpat odio. Fusce vulputate accumsan nulla eget luctus. Sed imperdiet, ex at dapibus sagittis, felis libero condimentum nibh, at tempus erat sapien eget dui. Aliquam ut lectus non erat volutpat imperdiet. Cras vulputate, enim sed lobortis ultrices, ipsum sapien dictum tortor, et tempus risus sem sed libero. Donec vel tristique odio, at egestas elit. Nulla fringilla leo vel tristique scelerisque. Fusce lectus odio, dapibus eu aliquam sit amet, feugiat nec lectus. Proin placerat est eros, non pulvinar arcu varius non. Maecenas et tincidunt libero.
+
+    Aenean laoreet dignissim rutrum. Quisque enim elit, tempus eu sem a, tincidunt consequat ante. Nunc vehicula porta orci at finibus. Aliquam erat volutpat. Phasellus justo purus, aliquam id felis sit amet, dignissim suscipit lorem. Suspendisse fermentum felis a eros condimentum vulputate. Donec id ligula posuere, condimentum arcu id, maximus tortor. Cras tempus dictum nulla molestie pretium. Nulla semper vitae purus ac elementum. Mauris quis purus molestie, lacinia nibh sed, dictum augue.
+
+    Cras bibendum turpis vel finibus interdum. Proin fringilla consectetur mattis. Praesent libero arcu, commodo ac tortor placerat, dictum mattis velit. Nam ac maximus ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet id est sit amet tempor. Duis justo arcu, rhoncus non elementum at, egestas egestas eros. Morbi dignissim est vel nulla suscipit pretium sed eu sapien. Etiam rutrum scelerisque ultrices. Donec fringilla cursus mattis.
+
+    Ut venenatis semper odio in scelerisque. Integer ac placerat sem. Praesent rhoncus, eros eget tincidunt condimentum, elit diam porta massa, et suscipit nibh nisi eu nibh. Pellentesque id purus eu ipsum tincidunt luctus. Sed id neque nec purus rutrum finibus. Vestibulum pellentesque purus ac sodales mollis. Phasellus suscipit, augue a tempus dictum, ligula eros tincidunt lorem, ut scelerisque leo sem hendrerit arcu. Maecenas vitae dolor lectus. Sed scelerisque imperdiet nulla, quis posuere purus ornare fermentum.
+
+    Vestibulum sit amet suscipit elit. Vestibulum ultricies neque facilisis tempor iaculis. Vestibulum eu lacus enim. Proin venenatis mi neque, in varius nunc pulvinar non. Mauris vel arcu in lorem egestas eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean ullamcorper dui ac consequat rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nec ipsum nulla.</p>
+                <h4 id="scrollspyHeading2">Second heading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut nisi eget nunc semper congue. Curabitur eu mattis neque. Nulla id ornare leo. Nullam imperdiet pulvinar consequat. Donec a volutpat odio. Fusce vulputate accumsan nulla eget luctus. Sed imperdiet, ex at dapibus sagittis, felis libero condimentum nibh, at tempus erat sapien eget dui. Aliquam ut lectus non erat volutpat imperdiet. Cras vulputate, enim sed lobortis ultrices, ipsum sapien dictum tortor, et tempus risus sem sed libero. Donec vel tristique odio, at egestas elit. Nulla fringilla leo vel tristique scelerisque. Fusce lectus odio, dapibus eu aliquam sit amet, feugiat nec lectus. Proin placerat est eros, non pulvinar arcu varius non. Maecenas et tincidunt libero.
+
+    Aenean laoreet dignissim rutrum. Quisque enim elit, tempus eu sem a, tincidunt consequat ante. Nunc vehicula porta orci at finibus. Aliquam erat volutpat. Phasellus justo purus, aliquam id felis sit amet, dignissim suscipit lorem. Suspendisse fermentum felis a eros condimentum vulputate. Donec id ligula posuere, condimentum arcu id, maximus tortor. Cras tempus dictum nulla molestie pretium. Nulla semper vitae purus ac elementum. Mauris quis purus molestie, lacinia nibh sed, dictum augue.
+
+    Cras bibendum turpis vel finibus interdum. Proin fringilla consectetur mattis. Praesent libero arcu, commodo ac tortor placerat, dictum mattis velit. Nam ac maximus ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet id est sit amet tempor. Duis justo arcu, rhoncus non elementum at, egestas egestas eros. Morbi dignissim est vel nulla suscipit pretium sed eu sapien. Etiam rutrum scelerisque ultrices. Donec fringilla cursus mattis.
+
+    Ut venenatis semper odio in scelerisque. Integer ac placerat sem. Praesent rhoncus, eros eget tincidunt condimentum, elit diam porta massa, et suscipit nibh nisi eu nibh. Pellentesque id purus eu ipsum tincidunt luctus. Sed id neque nec purus rutrum finibus. Vestibulum pellentesque purus ac sodales mollis. Phasellus suscipit, augue a tempus dictum, ligula eros tincidunt lorem, ut scelerisque leo sem hendrerit arcu. Maecenas vitae dolor lectus. Sed scelerisque imperdiet nulla, quis posuere purus ornare fermentum.
+
+    Vestibulum sit amet suscipit elit. Vestibulum ultricies neque facilisis tempor iaculis. Vestibulum eu lacus enim. Proin venenatis mi neque, in varius nunc pulvinar non. Mauris vel arcu in lorem egestas eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean ullamcorper dui ac consequat rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nec ipsum nulla.</p>
+                <h4 id="scrollspyHeading3">Third heading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut nisi eget nunc semper congue. Curabitur eu mattis neque. Nulla id ornare leo. Nullam imperdiet pulvinar consequat. Donec a volutpat odio. Fusce vulputate accumsan nulla eget luctus. Sed imperdiet, ex at dapibus sagittis, felis libero condimentum nibh, at tempus erat sapien eget dui. Aliquam ut lectus non erat volutpat imperdiet. Cras vulputate, enim sed lobortis ultrices, ipsum sapien dictum tortor, et tempus risus sem sed libero. Donec vel tristique odio, at egestas elit. Nulla fringilla leo vel tristique scelerisque. Fusce lectus odio, dapibus eu aliquam sit amet, feugiat nec lectus. Proin placerat est eros, non pulvinar arcu varius non. Maecenas et tincidunt libero.
+
+    Aenean laoreet dignissim rutrum. Quisque enim elit, tempus eu sem a, tincidunt consequat ante. Nunc vehicula porta orci at finibus. Aliquam erat volutpat. Phasellus justo purus, aliquam id felis sit amet, dignissim suscipit lorem. Suspendisse fermentum felis a eros condimentum vulputate. Donec id ligula posuere, condimentum arcu id, maximus tortor. Cras tempus dictum nulla molestie pretium. Nulla semper vitae purus ac elementum. Mauris quis purus molestie, lacinia nibh sed, dictum augue.
+
+    Cras bibendum turpis vel finibus interdum. Proin fringilla consectetur mattis. Praesent libero arcu, commodo ac tortor placerat, dictum mattis velit. Nam ac maximus ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet id est sit amet tempor. Duis justo arcu, rhoncus non elementum at, egestas egestas eros. Morbi dignissim est vel nulla suscipit pretium sed eu sapien. Etiam rutrum scelerisque ultrices. Donec fringilla cursus mattis.
+
+    Ut venenatis semper odio in scelerisque. Integer ac placerat sem. Praesent rhoncus, eros eget tincidunt condimentum, elit diam porta massa, et suscipit nibh nisi eu nibh. Pellentesque id purus eu ipsum tincidunt luctus. Sed id neque nec purus rutrum finibus. Vestibulum pellentesque purus ac sodales mollis. Phasellus suscipit, augue a tempus dictum, ligula eros tincidunt lorem, ut scelerisque leo sem hendrerit arcu. Maecenas vitae dolor lectus. Sed scelerisque imperdiet nulla, quis posuere purus ornare fermentum.
+
+    Vestibulum sit amet suscipit elit. Vestibulum ultricies neque facilisis tempor iaculis. Vestibulum eu lacus enim. Proin venenatis mi neque, in varius nunc pulvinar non. Mauris vel arcu in lorem egestas eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean ullamcorper dui ac consequat rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nec ipsum nulla.</p>
+                <h4 id="scrollspyHeading4">Fourth heading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut nisi eget nunc semper congue. Curabitur eu mattis neque. Nulla id ornare leo. Nullam imperdiet pulvinar consequat. Donec a volutpat odio. Fusce vulputate accumsan nulla eget luctus. Sed imperdiet, ex at dapibus sagittis, felis libero condimentum nibh, at tempus erat sapien eget dui. Aliquam ut lectus non erat volutpat imperdiet. Cras vulputate, enim sed lobortis ultrices, ipsum sapien dictum tortor, et tempus risus sem sed libero. Donec vel tristique odio, at egestas elit. Nulla fringilla leo vel tristique scelerisque. Fusce lectus odio, dapibus eu aliquam sit amet, feugiat nec lectus. Proin placerat est eros, non pulvinar arcu varius non. Maecenas et tincidunt libero.
+
+    Aenean laoreet dignissim rutrum. Quisque enim elit, tempus eu sem a, tincidunt consequat ante. Nunc vehicula porta orci at finibus. Aliquam erat volutpat. Phasellus justo purus, aliquam id felis sit amet, dignissim suscipit lorem. Suspendisse fermentum felis a eros condimentum vulputate. Donec id ligula posuere, condimentum arcu id, maximus tortor. Cras tempus dictum nulla molestie pretium. Nulla semper vitae purus ac elementum. Mauris quis purus molestie, lacinia nibh sed, dictum augue.
+
+    Cras bibendum turpis vel finibus interdum. Proin fringilla consectetur mattis. Praesent libero arcu, commodo ac tortor placerat, dictum mattis velit. Nam ac maximus ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet id est sit amet tempor. Duis justo arcu, rhoncus non elementum at, egestas egestas eros. Morbi dignissim est vel nulla suscipit pretium sed eu sapien. Etiam rutrum scelerisque ultrices. Donec fringilla cursus mattis.
+
+    Ut venenatis semper odio in scelerisque. Integer ac placerat sem. Praesent rhoncus, eros eget tincidunt condimentum, elit diam porta massa, et suscipit nibh nisi eu nibh. Pellentesque id purus eu ipsum tincidunt luctus. Sed id neque nec purus rutrum finibus. Vestibulum pellentesque purus ac sodales mollis. Phasellus suscipit, augue a tempus dictum, ligula eros tincidunt lorem, ut scelerisque leo sem hendrerit arcu. Maecenas vitae dolor lectus. Sed scelerisque imperdiet nulla, quis posuere purus ornare fermentum.
+
+    Vestibulum sit amet suscipit elit. Vestibulum ultricies neque facilisis tempor iaculis. Vestibulum eu lacus enim. Proin venenatis mi neque, in varius nunc pulvinar non. Mauris vel arcu in lorem egestas eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean ullamcorper dui ac consequat rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nec ipsum nulla.</p>
+                <h4 id="scrollspyHeading5">Fifth heading</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut nisi eget nunc semper congue. Curabitur eu mattis neque. Nulla id ornare leo. Nullam imperdiet pulvinar consequat. Donec a volutpat odio. Fusce vulputate accumsan nulla eget luctus. Sed imperdiet, ex at dapibus sagittis, felis libero condimentum nibh, at tempus erat sapien eget dui. Aliquam ut lectus non erat volutpat imperdiet. Cras vulputate, enim sed lobortis ultrices, ipsum sapien dictum tortor, et tempus risus sem sed libero. Donec vel tristique odio, at egestas elit. Nulla fringilla leo vel tristique scelerisque. Fusce lectus odio, dapibus eu aliquam sit amet, feugiat nec lectus. Proin placerat est eros, non pulvinar arcu varius non. Maecenas et tincidunt libero.
+
+    Aenean laoreet dignissim rutrum. Quisque enim elit, tempus eu sem a, tincidunt consequat ante. Nunc vehicula porta orci at finibus. Aliquam erat volutpat. Phasellus justo purus, aliquam id felis sit amet, dignissim suscipit lorem. Suspendisse fermentum felis a eros condimentum vulputate. Donec id ligula posuere, condimentum arcu id, maximus tortor. Cras tempus dictum nulla molestie pretium. Nulla semper vitae purus ac elementum. Mauris quis purus molestie, lacinia nibh sed, dictum augue.
+
+    Cras bibendum turpis vel finibus interdum. Proin fringilla consectetur mattis. Praesent libero arcu, commodo ac tortor placerat, dictum mattis velit. Nam ac maximus ante. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet id est sit amet tempor. Duis justo arcu, rhoncus non elementum at, egestas egestas eros. Morbi dignissim est vel nulla suscipit pretium sed eu sapien. Etiam rutrum scelerisque ultrices. Donec fringilla cursus mattis.
+
+    Ut venenatis semper odio in scelerisque. Integer ac placerat sem. Praesent rhoncus, eros eget tincidunt condimentum, elit diam porta massa, et suscipit nibh nisi eu nibh. Pellentesque id purus eu ipsum tincidunt luctus. Sed id neque nec purus rutrum finibus. Vestibulum pellentesque purus ac sodales mollis. Phasellus suscipit, augue a tempus dictum, ligula eros tincidunt lorem, ut scelerisque leo sem hendrerit arcu. Maecenas vitae dolor lectus. Sed scelerisque imperdiet nulla, quis posuere purus ornare fermentum.
+
+    Vestibulum sit amet suscipit elit. Vestibulum ultricies neque facilisis tempor iaculis. Vestibulum eu lacus enim. Proin venenatis mi neque, in varius nunc pulvinar non. Mauris vel arcu in lorem egestas eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aenean ullamcorper dui ac consequat rhoncus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam nec ipsum nulla.</p>
+                </article>
+            </div>
+        </div>
+    )
+}
+
+export default WebsitesContainer;

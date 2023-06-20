@@ -1,13 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&display=swap');
+:root, [data-bs-theme=light] {
+  --bs-body-font-family: 'Nunito', sans-serif;
+  --bs-body-color: #000;
+  --bs-body-color-rgb: #000;
+  --bs-body-bg: #fff;
+  --bs-body-bg-rgb: 255,255,255;
+  --bs-heading-color: #000;
+  --bs-body-font-size: 1rem;
+  --bs-link-color: #6d64e8;
+  --bs-link-color-rgb: 109, 100, 232;
+  --bs-link-hover-color: #da105d;
+  --bs-link-hover-color-rgb: 218, 16, 93;
+}
+
+::selection {
+  color: #fff;
+  background: #da105d;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: 100vh; */
+  justify-content: flex-start;
+}
+
+header, footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.btn-primary {
+  --bs-btn-color: #6d64e8;
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #6d64e8;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #6d64e8;
+  --bs-btn-hover-border-color: #6d64e8;
+  --bs-btn-active-color: #6d64e8;
+  --bs-btn-active-bg: #fff;
+  --bs-btn-active-border-color: #6d64e8;
+}
+
+.text-purple {
+  color: #6d64e8;
+}
+
+.text-red {
+  color: #da105d;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
 }

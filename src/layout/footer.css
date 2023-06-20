@@ -1,0 +1,14 @@
+footer {
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    gap: 10px;
+}
+
+footer p {
+    margin: 0rem;
+    padding: 0rem;
+    font-size: inherit;
+}

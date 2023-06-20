@@ -1,0 +1,12 @@
+section {
+    margin:3rem 1rem;
+}
+
+section:first-child {
+    margin-top:0rem;
+}
+
+.home-section h2{
+    text-align: center;
+    margin-bottom: 4rem;
+}
