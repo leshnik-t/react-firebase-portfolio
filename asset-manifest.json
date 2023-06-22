@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-firebase-portfolio/static/css/main.1e536651.css",
-    "main.js": "/react-firebase-portfolio/static/js/main.c6bd292d.js",
+    "main.js": "/react-firebase-portfolio/static/js/main.3013b923.js",
     "static/media/hero-image.png": "/react-firebase-portfolio/static/media/hero-image.be6c351267ce49fd3bb7.png",
     "static/media/web-design-frontend-development.jpg": "/react-firebase-portfolio/static/media/web-design-frontend-development.aa5b4607f3144f8c705c.jpg",
     "static/media/video-editing-effects.jpg": "/react-firebase-portfolio/static/media/video-editing-effects.d9ddf3114ca19f442ea8.jpg",
@@ -12,10 +12,10 @@
     "static/media/logo-line.png": "/react-firebase-portfolio/static/media/logo-line.8831c18966da5b640548.png",
     "index.html": "/react-firebase-portfolio/index.html",
     "main.1e536651.css.map": "/react-firebase-portfolio/static/css/main.1e536651.css.map",
-    "main.c6bd292d.js.map": "/react-firebase-portfolio/static/js/main.c6bd292d.js.map"
+    "main.3013b923.js.map": "/react-firebase-portfolio/static/js/main.3013b923.js.map"
   },
   "entrypoints": [
     "static/css/main.1e536651.css",
-    "static/js/main.c6bd292d.js"
+    "static/js/main.3013b923.js"
   ]
 }
