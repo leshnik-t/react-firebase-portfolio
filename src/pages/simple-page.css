@@ -24,6 +24,10 @@ article h1 {
     margin: 2rem 0rem;
 }
 
+.scroll-container {
+    position: relative;
+}
+
 @media screen and (min-width: 992px) {
     article h1 {
         text-align: left;

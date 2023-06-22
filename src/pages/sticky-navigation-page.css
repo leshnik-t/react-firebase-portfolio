@@ -8,9 +8,12 @@
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: #fff;
+    z-index: 2;
 }
 .col-main {
+    position: relative;
     margin-top: 2rem;
+    z-index: 1;
 }
 
 @media screen and (min-width: 992px) {
