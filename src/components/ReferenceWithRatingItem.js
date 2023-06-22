@@ -52,8 +52,8 @@ const ReferenceWithRatingItem = ({ item }) => {
                 <span>5.0</span>
             </div>
             <div className="reference-text">
-                <p>"Lena is an high professional designer. Also she understand the real requirement from customer. Definitely my best experience on odes. Thank you Lena for great job!!!"</p>
-                <h3>-- Project: Social network website design</h3>
+                <p>{item[1].text}</p>
+                <h3>{item[1].title}</h3>
             </div>
         </div>
     )
