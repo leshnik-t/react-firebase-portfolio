@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/react-firebase-portfolio/static/css/main.1e536651.css",
+    "main.js": "/react-firebase-portfolio/static/js/main.88802230.js",
+    "static/media/hero-image.png": "/react-firebase-portfolio/static/media/hero-image.be6c351267ce49fd3bb7.png",
+    "static/media/web-design-frontend-development.jpg": "/react-firebase-portfolio/static/media/web-design-frontend-development.aa5b4607f3144f8c705c.jpg",
+    "static/media/video-editing-effects.jpg": "/react-firebase-portfolio/static/media/video-editing-effects.d9ddf3114ca19f442ea8.jpg",
+    "static/media/email-newsletter-design-development.jpg": "/react-firebase-portfolio/static/media/email-newsletter-design-development.5caa8ff28ea98879ae02.jpg",
+    "static/media/web-banners.jpg": "/react-firebase-portfolio/static/media/web-banners.cc72d25c75b72104f6f2.jpg",
+    "static/media/javascript-small-games.jpg": "/react-firebase-portfolio/static/media/javascript-small-games.0b9d55e6b9568f39e85a.jpg",
+    "static/media/logo-design.jpg": "/react-firebase-portfolio/static/media/logo-design.ff2700fbfc541988024f.jpg",
+    "static/media/logo-line.png": "/react-firebase-portfolio/static/media/logo-line.8831c18966da5b640548.png",
+    "index.html": "/react-firebase-portfolio/index.html",
+    "main.1e536651.css.map": "/react-firebase-portfolio/static/css/main.1e536651.css.map",
+    "main.88802230.js.map": "/react-firebase-portfolio/static/js/main.88802230.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1e536651.css",
+    "static/js/main.88802230.js"
+  ]
+}
