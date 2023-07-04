@@ -1,17 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
-import Layout from './layout/Layout';
-import Home from './pages/Home';
-import Websites from './pages/Websites';
-import JavaScript from './pages/JavaScript';
-import Emails from './pages/Emails';
-import Videos from './pages/Videos';
-import Banners from './pages/Banners';
-import Logos from './pages/Logos';
-import Contact from './pages/Contact';
+import Layout from './client/layout/layout/Layout';
+import Home from './client/pages/home/Home';
+import Websites from './client/pages/websites/Websites';
+import JavaScript from './client/pages/javascript/JavaScript';
+import Emails from './client/pages/emails/Emails';
+import Videos from './client/pages/videos/Videos';
+import Banners from './client/pages/banners/Banners';
+import Logos from './client/pages/logos/Logos';
+import Contact from './client/pages/contact/Contact';
+import Login from './dashboard/pages/login/Login';
+import Dashboard from './dashboard/pages/dashboard/Dashboard';
 
 function App() {
   return (
     <Routes>
+      <Route path="/login" element={<Login />} />
       <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="web-design-and-frontend-development" element={<Websites />} />
@@ -22,6 +25,7 @@ function App() {
           <Route path="logo-design" element={<Logos />} />
           <Route path="contact" element={<Contact />} />
       </Route>
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
 }
