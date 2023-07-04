@@ -1,0 +1,10 @@
+.datatable .btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.datatable .btn-container a,
+.datatable .btn-container button {
+    margin-right: 1rem;
+}

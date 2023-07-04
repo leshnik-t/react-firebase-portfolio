@@ -1,0 +1,25 @@
+.widget {
+    flex: 1;
+    flex-basis: 300px;
+    position: relative;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    padding: 0.625rem 0.625rem 0.625rem 3rem;
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+    -moz-box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201,201,201,0.47);
+    border-radius: 10px;
+    min-height: 8rem;
+}
+
+.widget .icon {
+    position: absolute;
+    left:15px;
+    top:0;
+    font-size: 1.25rem;
+}
+
+.widget h2 {
+    font-size: 1.5rem;
+}
