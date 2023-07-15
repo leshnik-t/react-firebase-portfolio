@@ -1,11 +1,12 @@
 import './single.css';
 import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { databaseURL } from '../../../config/firebase';
 import useFetchRealtimeFirebase from '../../../hooks/useFetchRealtimeFirebase';
-import { Link, useLocation } from 'react-router-dom';
+import ItemDetails from '../../components/itemdetails/ItemDetails';
 
 const Single = () => {
-    const [item, setItem] = useState([]);
+    const [item, setItem] = useState(null);
     const location = useLocation();
     const itemPath = location.pathname.slice(1).split("/");
     const collectionName = itemPath[1];
@@ -32,29 +33,17 @@ const Single = () => {
                     <p className="alert alert-danger">{`Error: ${response.fetchError}`}</p>
                 }
             </div>
-            {!response.fetchError && !response.isLoading &&
+            {!response.fetchError && !response.isLoading && item &&
                 <>
-                    <div className="details">
-                        <div className="details-item">
-                            <div className="item-key">Post order name:</div>
-                            <div className="item-value">{item.orderName}</div>
-                        </div>
-                        <div className="details-item">
-                            <div className="item-key">Title:</div>
-                            <div className="item-value">{item.title}</div>
-                        </div>
-                        <div className="details-item">
-                            <div className="item-key">Text:</div>
-                            <div className="item-value">{item.text}</div>
-                        </div>
-                    </div>
                     <Link
                         to={`/dashboard/${collectionName}/${itemID}/edit`}
                         className="btn btn-primary mb-3"
                     >
                         Edit
                     </Link>
+                    <ItemDetails item={item} />
                 </>
+                
             }
         </main>
     )

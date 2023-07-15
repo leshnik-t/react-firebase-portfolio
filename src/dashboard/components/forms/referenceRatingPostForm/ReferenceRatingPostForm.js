@@ -1,6 +1,10 @@
-import { useState } from 'react';
-
-const ReferenceRatingPostForm = ({ handleChangeInput, handleSubmit, item, isEditing }) => {
+const ReferenceRatingPostForm = ({ 
+    handleChangeInput, 
+    handleSubmit, 
+    item,
+    percentage, 
+    isEditing 
+}) => {
     const buttonText = isEditing ? 'Submit changes' : 'Add post';
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
@@ -9,7 +13,7 @@ const ReferenceRatingPostForm = ({ handleChangeInput, handleSubmit, item, isEdit
                     htmlFor="orderName"
                     className="form-label"
                 >
-                    Post name:
+                    Post Order name:
                 </label>
                 <input 
                     type="text" 
@@ -23,7 +27,7 @@ const ReferenceRatingPostForm = ({ handleChangeInput, handleSubmit, item, isEdit
                     value={item.orderName || ''}
                 />
                 <div id="orderNameHelpBlock" className="form-text">
-                    This name could be used for ordering posts (asc/desc) on the client side.
+                    This name will be used for ordering posts (asc/desc) on the client side.
                 </div>
             </div>
             <div className="mb-3">
@@ -54,7 +58,7 @@ const ReferenceRatingPostForm = ({ handleChangeInput, handleSubmit, item, isEdit
                 <textarea 
                     className="form-control" 
                     id="text" 
-                    rows="3"
+                    rows="8"
                     aria-required="true"
                     required
                     onChange={(e) => handleChangeInput(e)}
@@ -62,7 +66,12 @@ const ReferenceRatingPostForm = ({ handleChangeInput, handleSubmit, item, isEdit
                 >
                 </textarea>
             </div>
-            <button type="submit" className="btn btn-primary">{buttonText}</button>
+            <button 
+                type="submit" 
+                className="btn btn-primary"
+            >
+                {buttonText}
+            </button>
         </form>
     )
 }

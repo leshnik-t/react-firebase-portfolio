@@ -59,7 +59,15 @@ function App() {
               addNewPath="/dashboard/references-image/new"
             />
           }/>
-          <Route path=":id" element={<Single/>} />
+          <Route path=":id">
+            <Route index element={<Single/>} />
+            <Route path="edit" element={
+              <Edit 
+                collectionName="references-image" 
+                pageTitle="Edit Post: Reference With Image"
+              />} 
+            />
+          </Route>
           <Route path="new" element={
             <New
               collectionName="references-image" 

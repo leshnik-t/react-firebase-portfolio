@@ -5,8 +5,16 @@
     gap: 1.25rem;
 }
 
+.edit .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .edit .left {
+    margin-bottom: 2.5rem;
     max-width: 500px;
+    min-width: 500px;
 }
 
 .edit form {

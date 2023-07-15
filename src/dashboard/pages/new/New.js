@@ -5,13 +5,12 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext';
 import apiRequest from '../../helpers/apiRequest';
-
 import renderFormByCollectionName from '../../helpers/renderFormByCollectionName';
 import NoImage from '../../assets/images/no-image-icon-0.jpg';
 
 const New = ({ collectionName, pageTitle }) => {
     const { currentUser } = useAuth();
-    const [data, setData] = useState({});
+    const [item, setItem] = useState({});
     const [file, setFile] = useState('');
     const [percentage, setPercentage] = useState(null);
     const [authError, setAuthError] = useState(null);
@@ -20,6 +19,8 @@ const New = ({ collectionName, pageTitle }) => {
 
     const ID_TOKEN = currentUser.stsTokenManager.accessToken;
     const API_URL = `${databaseURL}/${collectionName}`;
+
+    const isTemplateWithImage = (collectionName === 'references-rating') ? false : true;
 
     useEffect(() => {
         const uploadFile = (imageFolder) => {
@@ -55,8 +56,15 @@ const New = ({ collectionName, pageTitle }) => {
                     // Handle successful uploads on complete
                     // For instance, get the download URL: https://firebasestorage.googleapis.com/...
                     getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-                        console.log('File available at', downloadURL);
-                        setData((prev) => ({...prev, img: downloadURL}));
+                        const url = `images/${collectionName}/${file.name}`;
+                        const imgObject = {
+                            url : url,
+                            alt : item.img ? item.img.alt : ''
+                        }
+                        setItem((prev) => ({...prev, img: imgObject}));
+                        setTimeout(()=> {
+                            setPercentage(null);
+                        }, 2000)
                     });
                 }
             );
@@ -70,14 +78,23 @@ const New = ({ collectionName, pageTitle }) => {
         const id = e.target.id;
         const value = e.target.value;
 
-        if (id === "file") {
-            // const filePath = 'images/'+ dataType + '/' + e.target.files[0].name;
-            // const alt = "some alt goes here"
-            setFile(e.target.files[0]);
-            // setData({...data, "filePath" : filePath });
-            // setData({..data, "alt" : alt});
-        } else {
-            setData({...data, [id] : value});
+        switch(id) {
+            case "file": {
+                setFile(e.target.files[0]);
+                break;
+            }
+            case "alt": {
+                const imgObject = {
+                    url : item.img ? item.img.url : '',
+                    alt : value
+                }
+                setItem({...item, img : imgObject });
+                break;
+            }
+            default: {
+                setItem({...item, [id] : value});
+                break;
+            }
         }
     }
 
@@ -88,7 +105,7 @@ const New = ({ collectionName, pageTitle }) => {
             headers: {
             'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify(item)
         };
         
         const reqUrl = endPoint + '.json?auth=' + token;
@@ -99,7 +116,6 @@ const New = ({ collectionName, pageTitle }) => {
             setTimeout(() => {
                 setStatus(false);
             }, 2000);
-            
         }
     }
 
@@ -109,7 +125,7 @@ const New = ({ collectionName, pageTitle }) => {
     }
 
     const resetAfterPost = () => {
-        setData({});
+        setItem({});
         setFile('');
         setPercentage(null);
         setAuthError(null);
@@ -125,19 +141,19 @@ const New = ({ collectionName, pageTitle }) => {
             </div>
             <h1>{pageTitle}</h1>
             <div className="content">
-                <div className="left">
-                    {file &&
+                {isTemplateWithImage &&
+                    <div className="left">
                         <img src={file ? URL.createObjectURL(file) : NoImage} alt="" className="img-fluid"/>
-                    }
-                    <div className="alert-container">
-                        {file && <p>{file.name}</p> }
-                        {!authError && percentage !==null && percentage < 100 && <p className="alert alert-warning" role="alert">Uploading the image</p> }
-                        {percentage !== null && percentage === 100 && <p className="alert alert-warning"  role="alert">Image is uploaded</p> }
-                        {authError && <p className="alert alert-danger" role="alert">{authError}</p> }
+                        <div className="alert-container">
+                            {file && <p>{file.name}</p> }
+                            {!authError && percentage !==null && percentage < 100 && <p className="alert alert-warning" role="alert">Uploading the image</p> }
+                            {percentage !== null && percentage === 100 && <p className="alert alert-warning"  role="alert">Image is uploaded</p> }
+                            {authError && <p className="alert alert-danger" role="alert">{authError}</p> }
+                        </div>
                     </div>
-                </div>
+                }
                 <div className="right">
-                    {renderFormByCollectionName(collectionName, handleChangeInput, handleSubmit, data) }
+                    {renderFormByCollectionName(collectionName, handleChangeInput, handleSubmit, item, false, percentage) }
                     <div className="alert-container">
                         {fetchError && 
                             <p className="alert alert-danger" role="alert">{fetchError}</p>

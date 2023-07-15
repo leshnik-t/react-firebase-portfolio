@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 const useFetchRealtimeFirebase = (dataUrl) => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
     const [fetchError, setFetchError]  = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const mounted = useRef(true);

@@ -7,7 +7,14 @@ import VideoPostForm from '../components/forms/videoPostForm/VideoPostForm';
 import BannerPostForm from '../components/forms/bannerPostForm/BannerPostForm';
 import LogoPostForm from '../components/forms/logoPostForm/LogoPostForm';
 
-const renderFormByCollectionName = ( collectionName, handleChangeInput, handleSubmit, item, isEditing = false ) => {
+const renderFormByCollectionName = ( 
+        collectionName, 
+        handleChangeInput, 
+        handleSubmit, 
+        item, 
+        isEditing, 
+        percentage
+    ) => {
     switch(collectionName) {
         case 'references-image': return (
             <ReferenceImagePostForm 
@@ -15,6 +22,7 @@ const renderFormByCollectionName = ( collectionName, handleChangeInput, handleSu
                 handleSubmit={handleSubmit}
                 item={item}
                 isEditing={isEditing}
+                percentage={percentage}
             />
         )
         case 'references-rating': return (
@@ -23,6 +31,7 @@ const renderFormByCollectionName = ( collectionName, handleChangeInput, handleSu
                 handleSubmit={handleSubmit}
                 item={item}
                 isEditing={isEditing}
+                percentage={percentage}
             />
         )
         case 'websaites': return (
@@ -31,6 +40,7 @@ const renderFormByCollectionName = ( collectionName, handleChangeInput, handleSu
                 handleSubmit={handleSubmit}
                 item={item}
                 isEditing={isEditing}
+                percentage={percentage}
             />
         )
         case 'javascript': return (
@@ -38,6 +48,7 @@ const renderFormByCollectionName = ( collectionName, handleChangeInput, handleSu
                 handleChangeInput={handleChangeInput}
                 handleSubmit={handleSubmit}
                 isEditing={isEditing}
+                percentage={percentage}
             />
         )
         case 'emails': return (
@@ -46,6 +57,7 @@ const renderFormByCollectionName = ( collectionName, handleChangeInput, handleSu
                 handleSubmit={handleSubmit}
                 item={item}
                 isEditing={isEditing}
+                percentage={percentage}
             />
         )
         case 'videos': return (
@@ -54,6 +66,7 @@ const renderFormByCollectionName = ( collectionName, handleChangeInput, handleSu
                 handleSubmit={handleSubmit}
                 item={item}
                 isEditing={isEditing}
+                percentage={percentage}
             />
         )
         case 'banners': return (
@@ -62,6 +75,7 @@ const renderFormByCollectionName = ( collectionName, handleChangeInput, handleSu
                 handleSubmit={handleSubmit}
                 item={item}
                 isEditing={isEditing}
+                percentage={percentage}
             />
         )
         case 'logos': return (
@@ -70,6 +84,7 @@ const renderFormByCollectionName = ( collectionName, handleChangeInput, handleSu
                 handleSubmit={handleSubmit}
                 item={item}
                 isEditing={isEditing}
+                percentage={percentage}
             />
         )
         default: break;
