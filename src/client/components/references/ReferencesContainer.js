@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { endPointReferencesWithImage, endPointReferencesWithRating } from '../../config/endPoints';
 import useFetchRealtimeFirebase from '../../../hooks/useFetchRealtimeFirebase';
+import processListData from '../../../helpers/processListData';
 import ReferenceWithImageItem from './ReferenceWithImageItem';
 import ReferenceWithRatingItem from './ReferenceWithRatingItem';
 import './references-container.css';
@@ -13,13 +14,11 @@ const ReferencesContainer = () => {
     const responseRatingReferences = useFetchRealtimeFirebase(endPointReferencesWithRating);
 
     useEffect(() => {
-        if (responseImageReferences.data.length === 0) return;
-
-        setImageReferences(responseImageReferences.data);
+        setImageReferences(processListData(responseImageReferences.data));
     }, [responseImageReferences.data]);
 
     useEffect(() => {
-        setRatingReferences(responseRatingReferences.data);
+        setRatingReferences(processListData(responseRatingReferences.data));
     }, [responseRatingReferences.data]);
     
     return (
@@ -32,7 +31,7 @@ const ReferencesContainer = () => {
                         <p style={{color: "red"}}>{`Error: ${responseImageReferences.fetchError}`}</p>
                     }
                     {!responseImageReferences.fetchError && !responseImageReferences.isLoading && imageReferences.map((item) => 
-                        <ReferenceWithImageItem item={item} key={item[0]}/>
+                        <ReferenceWithImageItem item={item} key={item.id}/>
                     )}
                 </div>
                 <div className="col-xs-12 col-sm-6 col-md-4 col-lg-4">
@@ -41,7 +40,7 @@ const ReferencesContainer = () => {
                         <p style={{color: "red"}}>{`Error: ${responseRatingReferences.fetchError}`}</p>
                     }
                     {!responseRatingReferences.fetchError && !responseRatingReferences.isLoading && ratingReferences.map((item) => 
-                        <ReferenceWithRatingItem item={item} key={item[0]}/>
+                        <ReferenceWithRatingItem item={item} key={item.id}/>
                     )}
                 </div>
             </div>

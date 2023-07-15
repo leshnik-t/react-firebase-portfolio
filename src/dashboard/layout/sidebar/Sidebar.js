@@ -5,7 +5,7 @@ import { useAuth } from '../../../context/AuthContext';
 import { FaLaptopCode, FaStar, FaRegImage } from 'react-icons/fa';
 
 const Sidebar = () => {
-    const { logout } = useAuth();
+    const { currentUser, logout } = useAuth();
     const [ error, setError] = useState(null);
 
     const handleLogout = async (e) => {
@@ -30,7 +30,7 @@ const Sidebar = () => {
                 </section>
                 <section className="user">
                     <h3>Signed User</h3>
-                    <p>username@something.com</p>
+                    <p>{currentUser.email}</p>
                 </section>
                 <section className="center">
                     <div>

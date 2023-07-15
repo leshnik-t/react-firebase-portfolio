@@ -52,8 +52,8 @@ const ReferenceWithRatingItem = ({ item }) => {
                 <span>5.0</span>
             </div>
             <div className="reference-text">
-                <p>{item[1].text}</p>
-                <h3>{item[1].title}</h3>
+                <p>{item.text}</p>
+                <h3>{item.title}</h3>
             </div>
         </div>
     )

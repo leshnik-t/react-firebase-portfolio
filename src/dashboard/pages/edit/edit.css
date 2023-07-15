@@ -1,24 +1,24 @@
-.new .content {
+.edit .content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.25rem;
 }
 
-.new .left {
+.edit .left {
     max-width: 500px;
 }
 
-.new form {
+.edit form {
     max-width: 500px;
 }
 
-.new .alert-container {
+.edit .alert-container {
     margin: 0.9375rem 0rem;
 }
 
 @media screen and (min-width: 992px) {
-    .new .content {
+    .edit .content {
         flex-direction: row; 
     }
 }

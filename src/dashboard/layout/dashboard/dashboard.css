@@ -5,21 +5,29 @@
     justify-content: flex-start;
 }
 
-@media screen and (min-width: 992px) {
-    .dashboard {
-        flex-direction: row;
-    }
-}
-
 .dashboard .sidebar {
     flex: 1;
+    width: 100%;
 }
 
 .dashboard main {
-    flex: 9;
+    flex: 1;
     padding: 1.25rem;
+    width: 100%;
 }
 
 .dashboard h1 {
     font-size: 1.875rem;
+}
+
+@media screen and (min-width: 992px) {
+    .dashboard {
+        flex-direction: row;
+    }
+    .dashboard .sidebar {
+        flex: 2;
+    }
+    .dashboard main {
+        flex: 9;
+    }
 }

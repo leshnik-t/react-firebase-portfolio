@@ -15,6 +15,7 @@ import HomeDashboard from './dashboard/pages/home/Home';
 import List from './dashboard/pages/list/List';
 import Single from './dashboard/pages/single/Single';
 import New from './dashboard/pages/new/New';
+import Edit from './dashboard/pages/edit/Edit';
 
 function App() {
   const { currentUser } = useAuth();
@@ -55,88 +56,137 @@ function App() {
             <List 
               collectionName="references-image" 
               listTitle="References with image" 
-              addNewPath="/dashboard/references-image"
+              addNewPath="/dashboard/references-image/new"
             />
           }/>
           <Route path=":id" element={<Single/>} />
-          <Route path="new" element={<New />} />
+          <Route path="new" element={
+            <New
+              collectionName="references-image" 
+              pageTitle="New Post:  Reference With Image"
+            />} 
+          />
         </Route>
         <Route path="references-rating">
           <Route index element={
             <List 
               collectionName="references-rating" 
               listTitle="References with rating" 
-              addNewPath="/dashboard/references-rating"
+              addNewPath="/dashboard/references-rating/new"
             />
           }/>
-          <Route path=":id" element={<Single/>} />
-          <Route path="new" element={<New />} />
+          <Route path=":id">
+            <Route index element={<Single/>} />
+            <Route path="edit" element={
+              <Edit 
+                collectionName="references-rating" 
+                pageTitle="Edit Post: Reference With Rating"
+              />} 
+            />
+          </Route>
+          <Route path="new" element={
+            <New 
+              collectionName="references-rating" 
+              pageTitle="New Post: Reference With Rating"
+            />} 
+          />
+          
         </Route>
         <Route path="websites">
           <Route index element={
             <List 
               collectionName="websites" 
               listTitle="Websites" 
-              addNewPath="/dashboard/websites"
+              addNewPath="/dashboard/websites/new"
             />
           }/>
           <Route path=":id" element={<Single/>} />
-          <Route path="new" element={<New />} />
+          <Route path="new" element={
+            <New
+              collectionName="websites" 
+              pageTitle="New Post: Website"
+            />} 
+          />
         </Route>
         <Route path="javascript">
           <Route index element={
             <List 
               collectionName="javascript" 
               listTitle="JavaScript" 
-              addNewPath="/dashboard/javascript"
+              addNewPath="/dashboard/javascript/new"
             />
           }/>
           <Route path=":id" element={<Single/>} />
-          <Route path="new" element={<New />} />
+          <Route path="new" element={
+            <New
+              collectionName="javascript" 
+              pageTitle="New Post: JavaScript"
+            />} 
+          />
         </Route>
         <Route path="emails">
           <Route index element={
             <List 
               collectionName="emails" 
               listTitle="Emails" 
-              addNewPath="/dashboard/emails"
+              addNewPath="/dashboard/emails/new"
             />
           }/>
           <Route path=":id" element={<Single/>} />
-          <Route path="new" element={<New />} />
+          <Route path="new" element={
+            <New
+              collectionName="emails"  
+              pageTitle="New Post: Email"
+            />} 
+          />
         </Route>
         <Route path="videos">
           <Route index element={
             <List 
               collectionName="videos" 
               listTitle="Videos" 
-              addNewPath="/dashboard/videos"
+              addNewPath="/dashboard/videos/new"
             />
           }/>
           <Route path=":id" element={<Single/>} />
-          <Route path="new" element={<New />} />
+          <Route path="new" element={
+            <New
+              collectionName="videos" 
+              pageTitle="New Post: Video"
+            />} 
+          />
         </Route>
         <Route path="banners">
           <Route index element={
             <List 
               collectionName="banners" 
               listTitle="Banners" 
-              addNewPath="/dashboard/banners"
+              addNewPath="/dashboard/banners/new"
             />
           }/>
           <Route path=":id" element={<Single/>} />
-          <Route path="new" element={<New />} />
+          <Route path="new" element={
+            <New
+              collectionName="banners"  
+              pageTitle="New Post: Banners"
+            />} 
+          />
         </Route>
         <Route path="logos">
           <Route index element={
             <List 
               collectionName="logos" 
               listTitle="Logos" 
-              addNewPath="/dashboard/logos"
+              addNewPath="/dashboard/logos/new"
             />
           }/>
           <Route path=":id" element={<Single/>} />
-          <Route path="new" element={<New />} />
+          <Route path="new" element={
+            <New
+              collectionName="logos"  
+              pageTitle="New Post: Logo"
+            />} 
+          />
         </Route>
       </Route>
     </Routes>
