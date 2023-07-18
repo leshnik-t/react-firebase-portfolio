@@ -98,7 +98,6 @@ function App() {
               pageTitle="New Post: Reference With Rating"
             />} 
           />
-          
         </Route>
         <Route path="websites">
           <Route index element={
@@ -108,7 +107,15 @@ function App() {
               addNewPath="/dashboard/websites/new"
             />
           }/>
-          <Route path=":id" element={<Single/>} />
+         <Route path=":id">
+            <Route index element={<Single/>} />
+            <Route path="edit" element={
+              <Edit 
+                collectionName="websites" 
+                pageTitle="Edit Post: Websites"
+              />} 
+            />
+          </Route>
           <Route path="new" element={
             <New
               collectionName="websites" 
@@ -124,7 +131,15 @@ function App() {
               addNewPath="/dashboard/javascript/new"
             />
           }/>
-          <Route path=":id" element={<Single/>} />
+          <Route path=":id">
+            <Route index element={<Single/>} />
+            <Route path="edit" element={
+              <Edit 
+                collectionName="javascript" 
+                pageTitle="Edit Post: Javascript"
+              />} 
+            />
+          </Route>
           <Route path="new" element={
             <New
               collectionName="javascript" 
@@ -140,7 +155,15 @@ function App() {
               addNewPath="/dashboard/emails/new"
             />
           }/>
-          <Route path=":id" element={<Single/>} />
+          <Route path=":id">
+            <Route index element={<Single/>} />
+            <Route path="edit" element={
+              <Edit 
+                collectionName="emails" 
+                pageTitle="Edit Post: Email"
+              />} 
+            />
+          </Route>
           <Route path="new" element={
             <New
               collectionName="emails"  
@@ -156,7 +179,15 @@ function App() {
               addNewPath="/dashboard/videos/new"
             />
           }/>
-          <Route path=":id" element={<Single/>} />
+          <Route path=":id">
+            <Route index element={<Single/>} />
+            <Route path="edit" element={
+              <Edit 
+                collectionName="videos" 
+                pageTitle="Edit Post: Video"
+              />} 
+            />
+          </Route>
           <Route path="new" element={
             <New
               collectionName="videos" 
@@ -172,7 +203,15 @@ function App() {
               addNewPath="/dashboard/banners/new"
             />
           }/>
-          <Route path=":id" element={<Single/>} />
+          <Route path=":id">
+            <Route index element={<Single/>} />
+            <Route path="edit" element={
+              <Edit 
+                collectionName="banners" 
+                pageTitle="Edit Post: Banner"
+              />} 
+            />
+          </Route>
           <Route path="new" element={
             <New
               collectionName="banners"  
@@ -188,7 +227,15 @@ function App() {
               addNewPath="/dashboard/logos/new"
             />
           }/>
-          <Route path=":id" element={<Single/>} />
+          <Route path=":id">
+            <Route index element={<Single/>} />
+            <Route path="edit" element={
+              <Edit 
+                collectionName="logos" 
+                pageTitle="Edit Post: Logo"
+              />} 
+            />
+          </Route>
           <Route path="new" element={
             <New
               collectionName="logos"  

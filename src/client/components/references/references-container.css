@@ -40,16 +40,5 @@
     height: 12px;
 }
 
-.img-circle {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-}
 
-.img-placeholder {
-    display: block;
-    width:100px;
-    height: 100px;
-    background-color: lightgray;
-}
 

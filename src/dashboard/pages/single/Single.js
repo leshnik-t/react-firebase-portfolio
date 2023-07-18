@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { databaseURL } from '../../../config/firebase';
 import useFetchRealtimeFirebase from '../../../hooks/useFetchRealtimeFirebase';
+import ImageLoaderContainer from '../../components/imageloadercontainer/ImageLoaderContainer';
 import ItemDetails from '../../components/itemdetails/ItemDetails';
 
 const Single = () => {
@@ -14,6 +15,8 @@ const Single = () => {
 
     const API_URL = `${databaseURL}/${collectionName}/${itemID}.json`;
     const response = useFetchRealtimeFirebase(API_URL);
+
+    const cssImagePlaceholder = (collectionName === 'references-image') ? 'reference' : 'default';
 
     useEffect(() => {
         setItem(response.data); 
@@ -41,7 +44,13 @@ const Single = () => {
                     >
                         Edit
                     </Link>
-                    <ItemDetails item={item} />
+                    <div className="details">
+                        <ImageLoaderContainer 
+                            item={item} 
+                            cssImagePlaceholder={cssImagePlaceholder} 
+                        />
+                        <ItemDetails item={item}/>
+                    </div>
                 </>
                 
             }

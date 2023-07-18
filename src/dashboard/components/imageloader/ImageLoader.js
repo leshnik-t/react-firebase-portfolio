@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 import useImageUrl from '../../../hooks/useImageUrl';
 
-const ImageLoader = ( { url, alt } ) => {
+const ImageLoader = ( { url, alt, cssImagePlaceholder } ) => {
     const [imgUrl, setImgUrl] = useState('');
     const responseImageUrl = useImageUrl(url);
 
     useEffect(() => {
         setImgUrl(responseImageUrl.imgUrl)
-    }, [responseImageUrl]);
+    }, [responseImageUrl.imgUrl]);
 
     return (
         <>
             { responseImageUrl.isLoading && 
-                <div className="img-placeholder img-rectangle"></div> 
+                <div className={`img-placeholder ${cssImagePlaceholder}`}></div> 
             }
             { responseImageUrl.fetchError && 
                 <p className="alert alert-danger">{`Error: ${responseImageUrl.fetchError}`}</p> 

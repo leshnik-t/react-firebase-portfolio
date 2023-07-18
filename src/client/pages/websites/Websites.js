@@ -3,18 +3,17 @@ import '../simple-page.css';
 import { useState, useEffect } from 'react';
 import { endPointWebsites } from '../../config/endPoints';
 import useFetchRealtimeFirebase from '../../../hooks/useFetchRealtimeFirebase';
+import processListData from '../../../helpers/processListData';
 import Wrapper from '../../components/wrapper/Wrapper';
 import SideNav from '../../layout/sidenav/SideNav';
 import WebsitesContainer from '../../components/websitecontainer/WebsitesContainer';
 
 const Websites = () => {
-    const [websitePosts, setWebsitePosts] = useState([]);
+    const [websitePosts, setWebsitePosts] = useState(null);
     const responseWebsites = useFetchRealtimeFirebase(endPointWebsites);
 
     useEffect(() => {
-        if (responseWebsites.data.length === 0) return;
-
-        setWebsitePosts(responseWebsites.data);
+        setWebsitePosts(processListData(responseWebsites.data));
     }, [responseWebsites.data]);
 
     return (
@@ -35,7 +34,7 @@ const Websites = () => {
                                     {responseWebsites.fetchError && 
                                         <p style={{color: "red"}}>{`Error: ${responseWebsites.fetchError}`}</p>
                                     }
-                                    {!responseWebsites.fetchError && !responseWebsites.isLoading &&
+                                    {!responseWebsites.fetchError && !responseWebsites.isLoading && websitePosts &&
                                         <WebsitesContainer items={websitePosts} />
                                     }
                                 </div>

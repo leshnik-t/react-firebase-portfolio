@@ -1,5 +1,5 @@
 import './edit.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { storage, databaseURL } from '../../../config/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
@@ -25,8 +25,97 @@ const Edit = ({ collectionName, pageTitle}) => {
 
     const ID_TOKEN = currentUser.stsTokenManager.accessToken;
 
+    const cssImagePlaceholder = (collectionName === 'references-image') ? 'reference' : 'default';
+    const isTemplateWithImage = (collectionName === 'references-rating') ? false : true;
+
+    const [buttons, setButtons] = useState([]);
+    let buttonCounter = useRef(1);
+
+    const handleAddButton = (e) => {
+        buttonCounter.current = buttonCounter.current + 1;
+        addButton(buttonCounter.current);
+    }
+    
+    const handleDeleteButton = (e) => {
+        const choice = window.confirm(
+            "Are you sure you want to delete the post?"
+        )
+        if (choice) {
+            const id = e.target.id;
+            deleteButton(id, item);
+        }
+    }
+
+    const deleteButton = (id, currentItem) => {
+        const buttonsList = buttons.filter((item) => Number(item.id) !== Number(id));
+        const newItemData = JSON.parse(JSON.stringify(currentItem));
+        delete newItemData[`btn${id}`];
+        setItem(newItemData);
+        setButtons(buttonsList);
+    }
+
+    const addButton = (id) => {
+        const newButton = {id};
+        const buttonsList = [...buttons, newButton];
+        setButtons(buttonsList);
+    }
+
+    const getMobileUrl = (url) => {
+        const mobileUrl = url.slice(0, -11) + '-mobile.jpg';
+
+        return mobileUrl;
+    }
+
+    const getHighestBtnId = (item)  => {
+        if (item === null) return 1;
+
+        const btnsArrayKeys = [];
+        for (const key of Object.keys(item)) {
+            if (key.includes('btn')) {
+                const keyAsNumber = Number(key.match(/\d+/)[0]);
+                btnsArrayKeys.push(keyAsNumber);
+            }
+        }
+
+        if (btnsArrayKeys.length === 1) {
+           return btnsArrayKeys[0];
+        }
+
+        if (btnsArrayKeys.length > 1) {
+            btnsArrayKeys.sort((a, b) => b - a);
+        }
+
+        return btnsArrayKeys[0];
+    }
+
+    
+
+    const getAdditionalButtons = (item) => {
+        if (item === null) return [];
+
+        const btnsArrayKeys = [];
+        for (const key of Object.keys(item)) {
+            if (key.includes('btn')) {
+                const keyAsNumber = Number(key.match(/\d+/)[0]);
+                
+                btnsArrayKeys.push({id : keyAsNumber});
+            }
+        }
+
+        if (btnsArrayKeys.length === 1) return [];
+
+        if (btnsArrayKeys.length > 1) {
+            btnsArrayKeys.sort((a, b) => a - b);
+            btnsArrayKeys.shift();
+        }
+
+        return btnsArrayKeys;
+    }
+
     useEffect(() => {
-        setItem(response.data); 
+        setItem(response.data);
+        buttonCounter.current = getHighestBtnId(response.data);
+        setButtons(getAdditionalButtons(response.data))
     }, [response.data]);
 
     useEffect(() => {
@@ -66,7 +155,8 @@ const Edit = ({ collectionName, pageTitle}) => {
                         const url = `images/${collectionName}/${file.name}`;
                         const imgObject = {
                             url : url,
-                            alt : item.img ? item.img.alt : ''
+                            alt : item.img ? item.img.alt : '',
+                            mobileurl : getMobileUrl(url)
                         }
                         setItem((prev) => ({...prev, img: imgObject}));
                         setTimeout(()=> {
@@ -82,8 +172,32 @@ const Edit = ({ collectionName, pageTitle}) => {
     },[file, collectionName]);
 
     const handleChangeInput = (e) => {
-        const id = e.target.id;
+        let id = e.target.id;
         const value = e.target.value;
+        let buttonPropertiesArray = [];
+
+        const getBtnProperties = (id, value, currentItem)  => {
+            const btnNumber = id.match(/\d+/)[0];
+            const btnName = `btn${btnNumber}`;
+            const currentProperty = id.slice(-4);
+            const btnPropertiesObject = {
+                text: currentItem[btnName] ? currentItem[btnName].text : '',
+                link: currentItem[btnName] ? currentItem[btnName].link : '',
+            }
+            
+            if (currentProperty === 'text') {
+                btnPropertiesObject.text = value;
+            } else {
+                btnPropertiesObject.link = value;
+            }
+    
+            return [btnName, btnPropertiesObject];
+        }
+
+        if (id.indexOf('btn') !== -1) {
+            buttonPropertiesArray = getBtnProperties(id, value, item);
+            id = 'btn';
+        }
 
         switch(id) {
             case "file": {
@@ -93,9 +207,14 @@ const Edit = ({ collectionName, pageTitle}) => {
             case "alt": {
                 const imgObject = {
                     url : item.img ? item.img.url : '',
-                    alt : value
+                    alt : value,
+                    mobileurl : item.img ? getMobileUrl(item.img.url) : ''
                 }
                 setItem({...item, img : imgObject });
+                break;
+            }
+            case "btn": {
+                setItem({...item, [buttonPropertiesArray[0]] : buttonPropertiesArray[1] });
                 break;
             }
             default: {
@@ -108,7 +227,7 @@ const Edit = ({ collectionName, pageTitle}) => {
     const updateItem = async (endPoint, token) => {
 
         const patchOptions = {
-            method: 'PATCH',
+            method: 'PUT',
             headers: {
             'Content-Type': 'application/json',
             },
@@ -138,19 +257,20 @@ const Edit = ({ collectionName, pageTitle}) => {
             </div>
             <h1>{pageTitle}</h1>
             <div className="content">
-                <div className="image-container">
-                    {item && 
-                        <>
-                            <ImageLoaderContainer item={item} />
-                            <div className="alert-container">
-                                {file && <p>{file.name}</p> }
-                                {!authError && percentage !==null && percentage < 100 && <p className="alert alert-warning" role="alert">Uploading the image</p> }
-                                {percentage !== null && percentage === 100 && <p className="alert alert-warning"  role="alert">Image is uploaded</p> }
-                                {authError && <p className="alert alert-danger" role="alert">{authError}</p> }
-                            </div>
-                        </>
-                    }
-                </div>
+                {item && isTemplateWithImage &&
+                    <div className="image-container">
+                        <ImageLoaderContainer 
+                            item={item}
+                            cssImagePlaceholder={cssImagePlaceholder}
+                        />
+                        <div className="alert-container">
+                            {file && <p>{file.name}</p> }
+                            {!authError && percentage !==null && percentage < 100 && <p className="alert alert-warning" role="alert">Uploading the image</p> }
+                            {percentage !== null && percentage === 100 && <p className="alert alert-warning"  role="alert">Image is uploaded</p> }
+                            {authError && <p className="alert alert-danger" role="alert">{authError}</p> }
+                        </div>
+                    </div>
+                }
                 <div className="right">
                     <div className="alert-container">
                         {response.isLoading && 
@@ -161,7 +281,17 @@ const Edit = ({ collectionName, pageTitle}) => {
                         }
                     </div>
                     {!response.fetchError && !response.isLoading && item &&
-                        renderFormByCollectionName(collectionName, handleChangeInput, handleSubmit, item, true, percentage) 
+                        renderFormByCollectionName(
+                            collectionName, 
+                            handleChangeInput, 
+                            handleSubmit, 
+                            item, 
+                            true, 
+                            percentage,
+                            buttons,
+                            handleAddButton,
+                            handleDeleteButton
+                        ) 
                     }
                     <div className="alert-container">
                         {fetchError && 
@@ -172,7 +302,6 @@ const Edit = ({ collectionName, pageTitle}) => {
                         }
                     </div>
                 </div>
-                
             </div>
         </main>
         

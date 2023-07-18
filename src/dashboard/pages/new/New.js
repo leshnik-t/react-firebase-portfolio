@@ -1,5 +1,5 @@
 import './new.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { storage, databaseURL } from '../../../config/firebase';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { Link } from 'react-router-dom';
@@ -21,6 +21,44 @@ const New = ({ collectionName, pageTitle }) => {
     const API_URL = `${databaseURL}/${collectionName}`;
 
     const isTemplateWithImage = (collectionName === 'references-rating') ? false : true;
+
+    const [buttons, setButtons] = useState([]);
+    let buttonCounter = useRef(1);
+
+    const handleAddButton = (e) => {
+        buttonCounter.current = buttonCounter.current + 1;
+        addButton(buttonCounter.current);
+    }
+    
+    const handleDeleteButton = (e) => {
+        const choice = window.confirm(
+            "Are you sure you want to delete the post?"
+        )
+        if (choice) {
+            const id = e.target.id;
+            deleteButton(id, item);
+        }
+    }
+
+    const deleteButton = (id, currentItem) => {
+        const buttonsList = buttons.filter((item) => Number(item.id) !== Number(id));
+        const newItemData = JSON.parse(JSON.stringify(currentItem));
+        delete newItemData[`btn${id}`];
+        setItem(newItemData);
+        setButtons(buttonsList);
+    }
+
+    const addButton = (id) => {
+        const newButton = {id};
+        const buttonsList = [...buttons, newButton];
+        setButtons(buttonsList);
+    }
+
+    const getMobileUrl = (url) => {
+        const mobileUrl = url.slice(0, -11) + '-mobile.jpg';
+
+        return mobileUrl;
+    }
 
     useEffect(() => {
         const uploadFile = (imageFolder) => {
@@ -59,7 +97,8 @@ const New = ({ collectionName, pageTitle }) => {
                         const url = `images/${collectionName}/${file.name}`;
                         const imgObject = {
                             url : url,
-                            alt : item.img ? item.img.alt : ''
+                            alt : item.img ? item.img.alt : '',
+                            mobileurl : getMobileUrl(url)
                         }
                         setItem((prev) => ({...prev, img: imgObject}));
                         setTimeout(()=> {
@@ -75,8 +114,33 @@ const New = ({ collectionName, pageTitle }) => {
     },[file, collectionName]);
 
     const handleChangeInput = (e) => {
-        const id = e.target.id;
+        let id = e.target.id;
         const value = e.target.value;
+        let buttonPropertiesArray = [];
+       
+
+        const getBtnProperties = (id, value, currentItem)  => {
+            const btnNumber = id.match(/\d+/)[0];
+            const btnName = `btn${btnNumber}`;
+            const currentProperty = id.slice(-4);
+            const btnPropertiesObject = {
+                text: currentItem[btnName] ? currentItem[btnName].text : '',
+                link: currentItem[btnName] ? currentItem[btnName].link : '',
+            }
+            
+            if (currentProperty === 'text') {
+                btnPropertiesObject.text = value;
+            } else {
+                btnPropertiesObject.link = value;
+            }
+
+            return [btnName, btnPropertiesObject];
+        }
+
+        if (id.indexOf('btn') !== -1) {
+            buttonPropertiesArray = getBtnProperties(id, value, item);
+            id = 'btn';
+        }
 
         switch(id) {
             case "file": {
@@ -86,9 +150,14 @@ const New = ({ collectionName, pageTitle }) => {
             case "alt": {
                 const imgObject = {
                     url : item.img ? item.img.url : '',
-                    alt : value
+                    alt : value,
+                    mobileurl : item.img ? getMobileUrl(item.img.url) : ''
                 }
                 setItem({...item, img : imgObject });
+                break;
+            }
+            case "btn": {
+                setItem({...item, [buttonPropertiesArray[0]] : buttonPropertiesArray[1] });
                 break;
             }
             default: {
@@ -127,11 +196,13 @@ const New = ({ collectionName, pageTitle }) => {
     const resetAfterPost = () => {
         setItem({});
         setFile('');
+        setButtons([]);
         setPercentage(null);
         setAuthError(null);
         setFetchError(null);
         document.getElementsByTagName('form')[0].reset();
         setStatus(true);
+        buttonCounter.current = 1;
     }
 
     return (
@@ -153,7 +224,17 @@ const New = ({ collectionName, pageTitle }) => {
                     </div>
                 }
                 <div className="right">
-                    {renderFormByCollectionName(collectionName, handleChangeInput, handleSubmit, item, false, percentage) }
+                    {renderFormByCollectionName(
+                        collectionName, 
+                        handleChangeInput, 
+                        handleSubmit, 
+                        item, 
+                        false, 
+                        percentage,
+                        buttons,
+                        handleAddButton,
+                        handleDeleteButton
+                    )}
                     <div className="alert-container">
                         {fetchError && 
                             <p className="alert alert-danger" role="alert">{fetchError}</p>

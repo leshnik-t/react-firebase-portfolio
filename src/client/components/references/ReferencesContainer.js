@@ -8,9 +8,9 @@ import './references-container.css';
 
 
 const ReferencesContainer = () => {
-    const [imageReferences, setImageReferences] = useState([]);
+    const [imageReferences, setImageReferences] = useState(null);
     const responseImageReferences = useFetchRealtimeFirebase(endPointReferencesWithImage);
-    const [ratingReferences, setRatingReferences] = useState([]);
+    const [ratingReferences, setRatingReferences] = useState(null);
     const responseRatingReferences = useFetchRealtimeFirebase(endPointReferencesWithRating);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const ReferencesContainer = () => {
                     {responseImageReferences.fetchError && 
                         <p style={{color: "red"}}>{`Error: ${responseImageReferences.fetchError}`}</p>
                     }
-                    {!responseImageReferences.fetchError && !responseImageReferences.isLoading && imageReferences.map((item) => 
+                    {!responseImageReferences.fetchError && !responseImageReferences.isLoading && imageReferences && imageReferences.map((item) => 
                         <ReferenceWithImageItem item={item} key={item.id}/>
                     )}
                 </div>
@@ -39,7 +39,7 @@ const ReferencesContainer = () => {
                     {responseRatingReferences.fetchError && 
                         <p style={{color: "red"}}>{`Error: ${responseRatingReferences.fetchError}`}</p>
                     }
-                    {!responseRatingReferences.fetchError && !responseRatingReferences.isLoading && ratingReferences.map((item) => 
+                    {!responseRatingReferences.fetchError && !responseRatingReferences.isLoading && ratingReferences && ratingReferences.map((item) => 
                         <ReferenceWithRatingItem item={item} key={item.id}/>
                     )}
                 </div>

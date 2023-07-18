@@ -1,8 +1,8 @@
 import NoImage from '../../assets/images/no-image-icon-0.jpg';
 import ImageLoader from '../imageloader/ImageLoader';
 
-const ImageLoaderContainer = ({ item }) => {
-    const isTemplateWithImage = item.img ? true : false;
+const ImageLoaderContainer = ({ item, cssImagePlaceholder }) => {
+    const isTemplateWithImage = item.img ? true : false; 
     const isItemHasImageUrl = (item.img && item.img.url !== '') ? true : false;
     return (
         <>
@@ -11,7 +11,11 @@ const ImageLoaderContainer = ({ item }) => {
                     {isItemHasImageUrl &&
                         <>
                             <p>{item.img.url}</p>
-                            <ImageLoader url={item.img.url} alt={item.img.alt} />
+                            <ImageLoader 
+                                url={item.img.url} 
+                                alt={item.img.alt} 
+                                cssImagePlaceholder={cssImagePlaceholder}
+                            />
                         </>
                     }
                     {!isItemHasImageUrl &&

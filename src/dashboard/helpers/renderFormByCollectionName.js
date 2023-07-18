@@ -13,8 +13,12 @@ const renderFormByCollectionName = (
         handleSubmit, 
         item, 
         isEditing, 
-        percentage
+        percentage,
+        buttons,
+        handleAddButton,
+        handleDeleteButton
     ) => {
+        
     switch(collectionName) {
         case 'references-image': return (
             <ReferenceImagePostForm 
@@ -23,6 +27,9 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
+                buttons={[]}
+                handleAddButton={null}
+                handleDeleteButton={null}
             />
         )
         case 'references-rating': return (
@@ -32,6 +39,9 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
+                buttons={[]}
+                handleAddButton={null}
+                handleDeleteButton={null}
             />
         )
         case 'websaites': return (
@@ -41,14 +51,21 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
+                buttons={buttons}
+                handleAddButton={handleAddButton}
+                handleDeleteButton={handleDeleteButton}
             />
         )
         case 'javascript': return (
             <JavascriptPostForm 
                 handleChangeInput={handleChangeInput}
                 handleSubmit={handleSubmit}
+                item={item}
                 isEditing={isEditing}
                 percentage={percentage}
+                buttons={buttons}
+                handleAddButton={handleAddButton}
+                handleDeleteButton={handleDeleteButton}
             />
         )
         case 'emails': return (
@@ -58,6 +75,9 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
+                buttons={buttons}
+                handleAddButton={handleAddButton}
+                handleDeleteButton={handleDeleteButton}
             />
         )
         case 'videos': return (
@@ -67,6 +87,9 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
+                buttons={buttons}
+                handleAddButton={handleAddButton}
+                handleDeleteButton={handleDeleteButton}
             />
         )
         case 'banners': return (
@@ -76,6 +99,9 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
+                buttons={buttons}
+                handleAddButton={handleAddButton}
+                handleDeleteButton={handleDeleteButton}
             />
         )
         case 'logos': return (
@@ -85,6 +111,9 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
+                buttons={buttons}
+                handleAddButton={handleAddButton}
+                handleDeleteButton={handleDeleteButton}
             />
         )
         default: break;

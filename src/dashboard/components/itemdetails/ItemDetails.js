@@ -1,15 +1,14 @@
 import './item-details.css';
-// import ImageLoader from '../imageloader/ImageLoader';
-// import NoImage from '../../assets/images/no-image-icon-0.jpg';
 import ItemDetailsElement from "./ItemDetailsElement";
-import ImageLoaderContainer from '../imageloadercontainer/ImageLoaderContainer';
-
 
 const ItemDetails = ({ item }) => {
-    const itemList = (item) => {
-        const resultArray = [];
+    const getItemLists = (item) => {
+        const itemPropertiesArray = [];
+        const btnsArray = [];
+        const btnsMap = new Map();
+        const btnsArrayKeys = [];
         for (const [key, value] of Object.entries(item)) {
-            if (key !== 'img') {
+            if (key !== 'img' && !key.includes('btn')) {
                 let textInParagraphs = value;
                 if (key === 'text') {
                     const textValueArray = value.split('\n');
@@ -17,25 +16,46 @@ const ItemDetails = ({ item }) => {
                         <p key={`paragraph${index}`}>{paragraph}</p>
                     )
                 }
-                resultArray.push(
+                itemPropertiesArray.push(
                     <ItemDetailsElement 
                         key={key} 
                         property={key} 
                         value={textInParagraphs} 
                     />
                 )
-            } 
+            }
+            if (key.includes('btn')) {
+                const keyAsNumber = Number(key.match(/\d+/)[0]);
+                btnsMap.set(key, value.text);
+                btnsArrayKeys.push(keyAsNumber);
+            }
         }
 
-        return resultArray;
+        if (btnsArrayKeys.length > 0) {
+            btnsArrayKeys.sort((a, b) => a - b);
+            btnsArrayKeys.forEach((btnId) => {
+                btnsArray.push(
+                    <div className="mb-3" key={`btn${btnId}`}>
+                        <button 
+                            type="button"
+                            className="btn btn-primary"
+                        >
+                            {btnsMap.get(`btn${btnId}`)}
+                        </button>
+                    </div>
+                )
+            })
+        }
+
+        return [itemPropertiesArray, btnsArray];
     }
 
+    const [itemPropertiesArray, btnsArray] = getItemLists(item);
+
     return (
-        <div className="details">
-            <ImageLoaderContainer item={item} />
-            <div className="right">
-                {itemList(item)}
-            </div>
+        <div className="right">
+            {itemPropertiesArray.length > 0 && itemPropertiesArray}
+            {btnsArray.length > 0 && btnsArray}
         </div>
     )
 }
