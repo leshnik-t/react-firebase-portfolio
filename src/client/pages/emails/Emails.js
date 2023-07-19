@@ -9,11 +9,11 @@ import SideNav from '../../layout/sidenav/SideNav';
 import EmailsContainer from '../../components/emailscontainer/EmailsContainer';
 
 const Emails = () => {
-    const [emailsPosts, setJavascriptPosts] = useState(null);
+    const [emailPosts, setEmailPosts] = useState(null);
     const response = useFetchRealtimeFirebase(endPointEmails);
 
     useEffect(() => {
-        setJavascriptPosts(processListData(response.data));
+        setEmailPosts(processListData(response.data));
     }, [response.data]);
 
     return (
@@ -25,10 +25,10 @@ const Emails = () => {
                         {response.fetchError && 
                             <p style={{color: "red"}}>{`Error: ${response.fetchError}`}</p>
                         }
-                        {!response.fetchError && !response.isLoading && emailsPosts &&
+                        {!response.fetchError && !response.isLoading && emailPosts &&
                             <SideNav 
                                 className="sticky-navigation-container"
-                                items={emailsPosts}
+                                items={emailPosts}
                             />
                         }
                     </div>
@@ -40,8 +40,8 @@ const Emails = () => {
                                     {response.fetchError && 
                                         <p style={{color: "red"}}>{`Error: ${response.fetchError}`}</p>
                                     }
-                                    {!response.fetchError && !response.isLoading && emailsPosts &&
-                                        <EmailsContainer items={emailsPosts} />
+                                    {!response.fetchError && !response.isLoading && emailPosts &&
+                                        <EmailsContainer items={emailPosts} />
                                     }
                                 </div>
                             </div>

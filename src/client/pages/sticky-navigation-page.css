@@ -16,6 +16,10 @@
     z-index: 1;
 }
 
+.sticky-navigation-container{
+    width: 100%;
+}
+
 @media screen and (min-width: 992px) {
     .col-sticky {
         max-width: 200px;

@@ -7,3 +7,5 @@ export const endPointWebsites = 'https://react-firebase-portfolio-admin-default-
 export const endPointJavascript = 'https://react-firebase-portfolio-admin-default-rtdb.europe-west1.firebasedatabase.app/javascript.json';
 
 export const endPointEmails = 'https://react-firebase-portfolio-admin-default-rtdb.europe-west1.firebasedatabase.app/emails.json';
+
+export const endPointVideos = 'https://react-firebase-portfolio-admin-default-rtdb.europe-west1.firebasedatabase.app/videos.json';

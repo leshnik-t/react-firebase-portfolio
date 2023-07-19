@@ -6,7 +6,6 @@ const SideNav = ({ className, items }) => {
     const clickHandler = (e) => {
         e.preventDefault();
         const sectionTarget = document.getElementById(e.target.getAttribute("data-target")).offsetTop;
-        console.log(sectionTarget);
         window.scroll(0, sectionTarget);
 
         const offsetSideBar = document.getElementById('offcanvasNavbar');
