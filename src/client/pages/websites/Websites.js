@@ -6,7 +6,7 @@ import useFetchRealtimeFirebase from '../../../hooks/useFetchRealtimeFirebase';
 import processListData from '../../../helpers/processListData';
 import Wrapper from '../../components/wrapper/Wrapper';
 import SideNav from '../../layout/sidenav/SideNav';
-import WebsitesContainer from '../../components/websitecontainer/WebsitesContainer';
+import WebsitesContainer from '../../components/websitescontainer/WebsitesContainer';
 
 const Websites = () => {
     const [websitePosts, setWebsitePosts] = useState(null);
