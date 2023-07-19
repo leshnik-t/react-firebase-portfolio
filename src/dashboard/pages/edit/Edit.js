@@ -26,8 +26,11 @@ const Edit = ({ collectionName, pageTitle}) => {
     const ID_TOKEN = currentUser.stsTokenManager.accessToken;
 
     const cssImagePlaceholder = (collectionName === 'references-image') ? 'reference' : 'default';
-    const isTemplateWithImage = (collectionName === 'references-rating') ? false : true;
+    const isTemplateWithImage = ((collectionName === 'references-rating') 
+                                    || (collectionName === 'videos') 
+                                ) ? false : true;
 
+    // buttons vars and handlers
     const [buttons, setButtons] = useState([]);
     let buttonCounter = useRef(1);
 
@@ -60,62 +63,99 @@ const Edit = ({ collectionName, pageTitle}) => {
         setButtons(buttonsList);
     }
 
+    // videos vars and handlers
+    const [videos, setVideos] = useState([]);
+    let videoCounter = useRef(1);
+
+    const handleAddVideo = (e) => {
+        videoCounter.current = videoCounter.current + 1;
+        addVideo(videoCounter.current);
+    }
+    
+    const handleDeleteVideo = (e) => {
+        const choice = window.confirm(
+            "Are you sure you want to delete the post?"
+        )
+        if (choice) {
+            const id = e.target.id;
+            deleteVideo(id, item);
+        }
+    }
+
+    const deleteVideo = (id, currentItem) => {
+        const videosList = videos.filter((item) => Number(item.id) !== Number(id));
+        const newItemData = JSON.parse(JSON.stringify(currentItem));
+        delete newItemData[`video${id}`];
+        setItem(newItemData);
+        setVideos(videosList);
+    }
+
+    const addVideo = (id) => {
+        const newVideo = {id};
+        const videosList = [...videos, newVideo];
+        setVideos(videosList);
+    }
+
+    // should be modified for object
+
+    const getHighestObjId = (item, type)  => {
+        if (item === null) return 1;
+
+        const objArrayKeys = [];
+        for (const key of Object.keys(item)) {
+            if (key.includes(type)) {
+                const keyAsNumber = Number(key.match(/\d+/)[0]);
+                objArrayKeys.push(keyAsNumber);
+            }
+        }
+
+        if (objArrayKeys.length === 1) {
+           return objArrayKeys[0];
+        }
+
+        if (objArrayKeys.length > 1) {
+            objArrayKeys.sort((a, b) => b - a);
+        }
+
+        return objArrayKeys[0];
+    }
+
+    const getAdditionalObjects = (item, type) => {
+        if (item === null) return [];
+
+        const objArrayKeys = [];
+        for (const key of Object.keys(item)) {
+            if (key.includes(type)) {
+                const keyAsNumber = Number(key.match(/\d+/)[0]);
+                
+                objArrayKeys.push({id : keyAsNumber});
+            }
+        }
+
+        if (objArrayKeys.length === 1) return [];
+
+        if (objArrayKeys.length > 1) {
+            objArrayKeys.sort((a, b) => a - b);
+            objArrayKeys.shift();
+        }
+
+        return objArrayKeys;
+    }
+
+    // should be modified for object end
+
     const getMobileUrl = (url) => {
         const mobileUrl = url.slice(0, -11) + '-mobile.jpg';
 
         return mobileUrl;
     }
 
-    const getHighestBtnId = (item)  => {
-        if (item === null) return 1;
-
-        const btnsArrayKeys = [];
-        for (const key of Object.keys(item)) {
-            if (key.includes('btn')) {
-                const keyAsNumber = Number(key.match(/\d+/)[0]);
-                btnsArrayKeys.push(keyAsNumber);
-            }
-        }
-
-        if (btnsArrayKeys.length === 1) {
-           return btnsArrayKeys[0];
-        }
-
-        if (btnsArrayKeys.length > 1) {
-            btnsArrayKeys.sort((a, b) => b - a);
-        }
-
-        return btnsArrayKeys[0];
-    }
-
-    
-
-    const getAdditionalButtons = (item) => {
-        if (item === null) return [];
-
-        const btnsArrayKeys = [];
-        for (const key of Object.keys(item)) {
-            if (key.includes('btn')) {
-                const keyAsNumber = Number(key.match(/\d+/)[0]);
-                
-                btnsArrayKeys.push({id : keyAsNumber});
-            }
-        }
-
-        if (btnsArrayKeys.length === 1) return [];
-
-        if (btnsArrayKeys.length > 1) {
-            btnsArrayKeys.sort((a, b) => a - b);
-            btnsArrayKeys.shift();
-        }
-
-        return btnsArrayKeys;
-    }
-
     useEffect(() => {
         setItem(response.data);
-        buttonCounter.current = getHighestBtnId(response.data);
-        setButtons(getAdditionalButtons(response.data))
+        buttonCounter.current = getHighestObjId(response.data, 'btn');
+        videoCounter.current = getHighestObjId(response.data, 'video');
+        setButtons(getAdditionalObjects(response.data, 'btn'));
+        setVideos(getAdditionalObjects(response.data, 'video'));
     }, [response.data]);
 
     useEffect(() => {
@@ -175,28 +215,34 @@ const Edit = ({ collectionName, pageTitle}) => {
         let id = e.target.id;
         const value = e.target.value;
         let buttonPropertiesArray = [];
+        let videoPropertiesArray = [];
 
-        const getBtnProperties = (id, value, currentItem)  => {
-            const btnNumber = id.match(/\d+/)[0];
-            const btnName = `btn${btnNumber}`;
+        const getObjectProperties = (id, type, value, currentItem)  => {
+            const objNumber = id.match(/\d+/)[0];
+            const objName = (type === 'btn') ? `btn${objNumber}` : `video${objNumber}`;
             const currentProperty = id.slice(-4);
-            const btnPropertiesObject = {
-                text: currentItem[btnName] ? currentItem[btnName].text : '',
-                link: currentItem[btnName] ? currentItem[btnName].link : '',
+            const objProperties = {
+                text: currentItem[objName] ? currentItem[objName].text : '',
+                link: currentItem[objName] ? currentItem[objName].link : '',
             }
             
             if (currentProperty === 'text') {
-                btnPropertiesObject.text = value;
+                objProperties.text = value;
             } else {
-                btnPropertiesObject.link = value;
+                objProperties.link = value;
             }
-    
-            return [btnName, btnPropertiesObject];
+
+            return [objName, objProperties];
         }
 
         if (id.indexOf('btn') !== -1) {
-            buttonPropertiesArray = getBtnProperties(id, value, item);
+            buttonPropertiesArray = getObjectProperties(id, 'btn', value, item);
             id = 'btn';
+        }
+
+        if (id.indexOf('video') !== -1) {
+            videoPropertiesArray = getObjectProperties(id, 'video', value, item);
+            id = 'video';
         }
 
         switch(id) {
@@ -215,6 +261,10 @@ const Edit = ({ collectionName, pageTitle}) => {
             }
             case "btn": {
                 setItem({...item, [buttonPropertiesArray[0]] : buttonPropertiesArray[1] });
+                break;
+            }
+            case "video": {
+                setItem({...item, [videoPropertiesArray[0]] : videoPropertiesArray[1]});
                 break;
             }
             default: {
@@ -290,7 +340,10 @@ const Edit = ({ collectionName, pageTitle}) => {
                             percentage,
                             buttons,
                             handleAddButton,
-                            handleDeleteButton
+                            handleDeleteButton,
+                            videos,
+                            handleAddVideo,
+                            handleDeleteVideo
                         ) 
                     }
                     <div className="alert-container">

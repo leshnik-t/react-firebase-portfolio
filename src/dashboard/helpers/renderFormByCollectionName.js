@@ -16,7 +16,10 @@ const renderFormByCollectionName = (
         percentage,
         buttons,
         handleAddButton,
-        handleDeleteButton
+        handleDeleteButton,
+        videos,
+        handleAddVideo,
+        handleDeleteVideo
     ) => {
         
     switch(collectionName) {
@@ -27,9 +30,6 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
-                buttons={[]}
-                handleAddButton={null}
-                handleDeleteButton={null}
             />
         )
         case 'references-rating': return (
@@ -38,10 +38,6 @@ const renderFormByCollectionName = (
                 handleSubmit={handleSubmit}
                 item={item}
                 isEditing={isEditing}
-                percentage={percentage}
-                buttons={[]}
-                handleAddButton={null}
-                handleDeleteButton={null}
             />
         )
         case 'websaites': return (
@@ -86,10 +82,9 @@ const renderFormByCollectionName = (
                 handleSubmit={handleSubmit}
                 item={item}
                 isEditing={isEditing}
-                percentage={percentage}
-                buttons={buttons}
-                handleAddButton={handleAddButton}
-                handleDeleteButton={handleDeleteButton}
+                videos={videos}
+                handleAddVideo={handleAddVideo}
+                handleDeleteVideo={handleDeleteVideo}
             />
         )
         case 'banners': return (
@@ -111,9 +106,6 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
-                buttons={buttons}
-                handleAddButton={handleAddButton}
-                handleDeleteButton={handleDeleteButton}
             />
         )
         default: break;

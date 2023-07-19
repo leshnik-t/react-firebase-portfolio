@@ -17,6 +17,7 @@ const Single = () => {
     const response = useFetchRealtimeFirebase(API_URL);
 
     const cssImagePlaceholder = (collectionName === 'references-image') ? 'reference' : 'default';
+    const isTemplateWithImage = item && item.img ? true : false;
 
     useEffect(() => {
         setItem(response.data); 
@@ -45,10 +46,12 @@ const Single = () => {
                         Edit
                     </Link>
                     <div className="details">
-                        <ImageLoaderContainer 
-                            item={item} 
-                            cssImagePlaceholder={cssImagePlaceholder} 
-                        />
+                        {isTemplateWithImage &&
+                            <ImageLoaderContainer  
+                                item={item} 
+                                cssImagePlaceholder={cssImagePlaceholder} 
+                            />
+                        }
                         <ItemDetails item={item}/>
                     </div>
                 </>

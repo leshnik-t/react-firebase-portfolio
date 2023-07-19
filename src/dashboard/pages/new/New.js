@@ -20,8 +20,11 @@ const New = ({ collectionName, pageTitle }) => {
     const ID_TOKEN = currentUser.stsTokenManager.accessToken;
     const API_URL = `${databaseURL}/${collectionName}`;
 
-    const isTemplateWithImage = (collectionName === 'references-rating') ? false : true;
+    const isTemplateWithImage = ((collectionName === 'references-rating') 
+                                    || (collectionName === 'videos') 
+                                ) ? false : true;
 
+    // buttons vars and handlers
     const [buttons, setButtons] = useState([]);
     let buttonCounter = useRef(1);
 
@@ -52,6 +55,39 @@ const New = ({ collectionName, pageTitle }) => {
         const newButton = {id};
         const buttonsList = [...buttons, newButton];
         setButtons(buttonsList);
+    }
+
+    // videos vars and handlers
+    const [videos, setVideos] = useState([]);
+    let videoCounter = useRef(1);
+
+    const handleAddVideo = (e) => {
+        videoCounter.current = videoCounter.current + 1;
+        addVideo(videoCounter.current);
+    }
+    
+    const handleDeleteVideo = (e) => {
+        const choice = window.confirm(
+            "Are you sure you want to delete the post?"
+        )
+        if (choice) {
+            const id = e.target.id;
+            deleteVideo(id, item);
+        }
+    }
+
+    const deleteVideo = (id, currentItem) => {
+        const videosList = videos.filter((item) => Number(item.id) !== Number(id));
+        const newItemData = JSON.parse(JSON.stringify(currentItem));
+        delete newItemData[`video${id}`];
+        setItem(newItemData);
+        setVideos(videosList);
+    }
+
+    const addVideo = (id) => {
+        const newVideo = {id};
+        const videosList = [...videos, newVideo];
+        setVideos(videosList);
     }
 
     const getMobileUrl = (url) => {
@@ -117,29 +153,35 @@ const New = ({ collectionName, pageTitle }) => {
         let id = e.target.id;
         const value = e.target.value;
         let buttonPropertiesArray = [];
+        let videoPropertiesArray = [];
        
 
-        const getBtnProperties = (id, value, currentItem)  => {
-            const btnNumber = id.match(/\d+/)[0];
-            const btnName = `btn${btnNumber}`;
+        const getObjectProperties = (id, type, value, currentItem)  => {
+            const objNumber = id.match(/\d+/)[0];
+            const objName = (type === 'btn') ? `btn${objNumber}` : `video${objNumber}`;
             const currentProperty = id.slice(-4);
-            const btnPropertiesObject = {
-                text: currentItem[btnName] ? currentItem[btnName].text : '',
-                link: currentItem[btnName] ? currentItem[btnName].link : '',
+            const objProperties = {
+                text: currentItem[objName] ? currentItem[objName].text : '',
+                link: currentItem[objName] ? currentItem[objName].link : '',
             }
             
             if (currentProperty === 'text') {
-                btnPropertiesObject.text = value;
+                objProperties.text = value;
             } else {
-                btnPropertiesObject.link = value;
+                objProperties.link = value;
             }
 
-            return [btnName, btnPropertiesObject];
+            return [objName, objProperties];
         }
 
         if (id.indexOf('btn') !== -1) {
-            buttonPropertiesArray = getBtnProperties(id, value, item);
+            buttonPropertiesArray = getObjectProperties(id, 'btn', value, item);
             id = 'btn';
+        }
+
+        if (id.indexOf('video') !== -1) {
+            videoPropertiesArray = getObjectProperties(id, 'video', value, item);
+            id = 'video';
         }
 
         switch(id) {
@@ -157,7 +199,11 @@ const New = ({ collectionName, pageTitle }) => {
                 break;
             }
             case "btn": {
-                setItem({...item, [buttonPropertiesArray[0]] : buttonPropertiesArray[1] });
+                setItem({...item, [buttonPropertiesArray[0]] : buttonPropertiesArray[1]});
+                break;
+            }
+            case "video": {
+                setItem({...item, [videoPropertiesArray[0]] : videoPropertiesArray[1]});
                 break;
             }
             default: {
@@ -197,6 +243,7 @@ const New = ({ collectionName, pageTitle }) => {
         setItem({});
         setFile('');
         setButtons([]);
+        setVideos([]);
         setPercentage(null);
         setAuthError(null);
         setFetchError(null);
@@ -233,7 +280,10 @@ const New = ({ collectionName, pageTitle }) => {
                         percentage,
                         buttons,
                         handleAddButton,
-                        handleDeleteButton
+                        handleDeleteButton,
+                        videos,
+                        handleAddVideo,
+                        handleDeleteVideo
                     )}
                     <div className="alert-container">
                         {fetchError && 

@@ -7,27 +7,42 @@ const ItemDetails = ({ item }) => {
         const btnsArray = [];
         const btnsMap = new Map();
         const btnsArrayKeys = [];
+        const videosArray = [];
+        const videosMap = new Map();
+        const videosArrayKeys = [];
+        
         for (const [key, value] of Object.entries(item)) {
-            if (key !== 'img' && !key.includes('btn')) {
-                let textInParagraphs = value;
-                if (key === 'text') {
-                    const textValueArray = value.split('\n');
-                    textInParagraphs = textValueArray.map((paragraph, index) => 
-                        <p key={`paragraph${index}`}>{paragraph}</p>
-                    )
+            switch(true) {
+                case (key.includes('btn')): {
+                    const keyAsNumber = Number(key.match(/\d+/)[0]);
+                    btnsMap.set(key, value.text);
+                    btnsArrayKeys.push(keyAsNumber);
+                    break;
                 }
-                itemPropertiesArray.push(
-                    <ItemDetailsElement 
-                        key={key} 
-                        property={key} 
-                        value={textInParagraphs} 
-                    />
-                )
-            }
-            if (key.includes('btn')) {
-                const keyAsNumber = Number(key.match(/\d+/)[0]);
-                btnsMap.set(key, value.text);
-                btnsArrayKeys.push(keyAsNumber);
+                case (key.includes('video')): {
+                    const keyAsNumber = Number(key.match(/\d+/)[0]);
+                    videosMap.set(key, value);
+                    videosArrayKeys.push(keyAsNumber);
+                    break;
+                }
+                case (key === 'img' ): break;
+                default: {
+                    let textInParagraphs = value;
+                    if (key === 'text') {
+                        const textValueArray = value.split('\n');
+                        textInParagraphs = textValueArray.map((paragraph, index) => 
+                            <p key={`paragraph${index}`}>{paragraph}</p>
+                        )
+                    }
+                    itemPropertiesArray.push(
+                        <ItemDetailsElement 
+                            key={key} 
+                            property={key} 
+                            value={textInParagraphs} 
+                        />
+                    )
+                    break;
+                }
             }
         }
 
@@ -47,15 +62,29 @@ const ItemDetails = ({ item }) => {
             })
         }
 
-        return [itemPropertiesArray, btnsArray];
+        if (videosArrayKeys.length > 0) {
+            videosArrayKeys.sort((a, b) => a - b);
+            videosArrayKeys.forEach((videoId) => {
+                videosArray.push(
+                    <ItemDetailsElement
+                        key={`video${videoId}`}
+                        property={videosMap.get(`video${videoId}`).text} 
+                        value={videosMap.get(`video${videoId}`).link} 
+                    />
+                )
+            })
+        }
+       
+        return [itemPropertiesArray, btnsArray, videosArray];
     }
 
-    const [itemPropertiesArray, btnsArray] = getItemLists(item);
+    const [itemPropertiesArray, btnsArray, videosArray] = getItemLists(item);
 
     return (
         <div className="right">
             {itemPropertiesArray.length > 0 && itemPropertiesArray}
             {btnsArray.length > 0 && btnsArray}
+            {videosArray.length > 0 && videosArray}
         </div>
     )
 }

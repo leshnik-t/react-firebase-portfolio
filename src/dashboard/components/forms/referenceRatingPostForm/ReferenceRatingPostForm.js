@@ -2,7 +2,6 @@ const ReferenceRatingPostForm = ({
     handleChangeInput, 
     handleSubmit, 
     item,
-    percentage, 
     isEditing 
 }) => {
     const buttonText = isEditing ? 'Submit changes' : 'Add post';
