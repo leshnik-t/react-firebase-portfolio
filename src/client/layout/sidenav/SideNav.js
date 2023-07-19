@@ -1,6 +1,8 @@
 import './side-nav.css';
+import { Link } from 'react-router-dom';
 
 const SideNav = ({ className, items }) => {
+    const navItemsList = items.map((item) => [item.orderName, item.title]);
     const clickHandler = (e) => {
         e.preventDefault();
         const sectionTarget = document.getElementById(e.target.getAttribute("data-target")).offsetTop;
@@ -29,66 +31,19 @@ const SideNav = ({ className, items }) => {
                         <div className="offcanvas-body">
                             <nav id="navbarNav" className="navbar navbar-light">
                                 <ul className="nav navbar-nav justify-content-end flex-grow-1">
-                                    <li className="nav-item">
-                                        <a 
-                                            href="#section1"
-                                            data-target="section1"
-                                            className="nav-link" 
-                                            onClick={clickHandler}
-                                        >
-                                            First heading
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a 
-                                            href="#section2"
-                                            data-target="section2"
-                                            className="nav-link" 
-                                            onClick={clickHandler}
-                                        >
-                                            Second heading
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a 
-                                            href="#section3"
-                                            data-target="section3"
-                                            className="nav-link" 
-                                            onClick={clickHandler}
-                                        >
-                                            Third heading
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a 
-                                            href="#section4"
-                                            data-target="section4"
-                                            className="nav-link" 
-                                            onClick={clickHandler}
-                                        >
-                                            Fourth heading
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a 
-                                            href="#section5"
-                                            data-target="section5"
-                                            className="nav-link" 
-                                            onClick={clickHandler}
-                                        >
-                                            Fifth heading
-                                        </a>
-                                    </li>
-                                    <li className="nav-item">
-                                        <a 
-                                            href="#section6"
-                                            data-target="section6"
-                                            className="nav-link" 
-                                            onClick={clickHandler}
-                                        >
-                                            Free Property Valuation Bansko
-                                        </a>
-                                    </li>
+                                    {navItemsList.length > 0 && navItemsList.map((navLink) => (
+                                        <li className="nav-item" key={`#${navLink[0]}`}>
+                                            <Link
+                                                href={`#${navLink[0]}`}
+                                                data-target={navLink[0]}
+                                                className="nav-link" 
+                                                onClick={clickHandler}
+                                            >
+                                                {navLink[1]}
+                                            </Link>
+                                        </li>
+                                        )
+                                    )}
                                 </ul>
                             </nav>
                         </div>

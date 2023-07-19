@@ -3,3 +3,5 @@ export const endPointReferencesWithImage = 'https://react-firebase-portfolio-adm
 export const endPointReferencesWithRating = 'https://react-firebase-portfolio-admin-default-rtdb.europe-west1.firebasedatabase.app/references-rating.json';
 
 export const endPointWebsites = 'https://react-firebase-portfolio-admin-default-rtdb.europe-west1.firebasedatabase.app/websites.json';
+
+export const endPointJavascript = 'https://react-firebase-portfolio-admin-default-rtdb.europe-west1.firebasedatabase.app/javascript.json';

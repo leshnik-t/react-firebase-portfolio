@@ -18,10 +18,10 @@
 
 @media screen and (min-width: 992px) {
     .col-sticky {
-        max-width: 160px;
+        max-width: 200px;
         top: 5rem;
     }
     .col-main {
-        padding-left: 200px;
+        padding-left: 220px;
     }
 } 
