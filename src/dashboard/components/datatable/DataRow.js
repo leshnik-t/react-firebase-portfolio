@@ -5,6 +5,7 @@ const DataRow = ({ collectionName, item, handleDeleteClick }) => {
         <tr>
             <th scope="row">{item.id}</th>
             <td>{item.orderName}</td>
+            <td>{item.title}</td>
             <td>
                 <div className="btn-container">
                     <Link 

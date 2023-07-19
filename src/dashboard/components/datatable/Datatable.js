@@ -71,7 +71,8 @@ const Datatable = ({ collectionName }) => {
                         <thead className="table-light">
                             <tr>
                                 <th scope="col" className="col-2">#</th>
-                                <th scope="col" className="col-6">Post name</th>
+                                <th scope="col" className="col-2">Post name</th>
+                                <th scope="col" className="col-4">Post title</th>
                                 <th scope="col" className="col-4">Actions</th>
                             </tr>
                         </thead>
