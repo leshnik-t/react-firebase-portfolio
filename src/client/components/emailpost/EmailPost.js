@@ -1,3 +1,4 @@
+import "./email-post.css";
 import { useState, useEffect } from 'react';
 import useImageUrl from '../../../hooks/useImageUrl';
 import { Link } from 'react-router-dom';
@@ -58,7 +59,7 @@ const EmailPost = ({ item }) => {
     const [buttonsList, imageLinkUrl, imageLinkUrlTitle] = getButtonsList(item);
 
     return (
-        <section className="secondary-section post-item" id={item.orderName}>
+        <section className="secondary-section post-item email-post" id={item.orderName}>
             <h2>{item.title}</h2>
             <p><span>Industry:</span> {item.industry}</p>
             <p><span>Technology Leveraged:</span>{item.technology}</p>
@@ -71,8 +72,8 @@ const EmailPost = ({ item }) => {
                 target="_blank" 
                 rel="noopener noreferrer"
             >
-                <div className="image-container website">
-                { responseImageUrl.isLoading && <div className="img-placeholder websites"></div> }
+                <div className="image-container">
+                { responseImageUrl.isLoading && <div className="img-placeholder"></div> }
                 { responseImageUrl.fetchError && <p style={{color: "red"}}>{`Error: ${responseImageUrl.fetchError}`}</p> }
                 { !responseImageUrl.fetchError && !responseImageUrl.isLoading && 
                     <picture>

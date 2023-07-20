@@ -1,33 +1,79 @@
+import "./website-post.css";
 import { useState, useEffect } from 'react';
 import useImageUrl from '../../../hooks/useImageUrl';
+import { Link } from 'react-router-dom';
 
 const WebsitePost = ({ item }) => {
     const [imgUrl, setImgUrl] = useState('');
-    const responseImageUrl = useImageUrl(item.img.setscreen);
+    const responseImageUrl = useImageUrl(item.img.url);
     const [imgUrlMobile, setImgUrlMobile] = useState('');
-    const responseImageUrlMobile = useImageUrl(item.img.setmobile);
+    const responseImageUrlMobile = useImageUrl(item.img.mobileurl);
 
     useEffect(() => {
-        console.log("response url",responseImageUrl.imgUrl);
         setImgUrl(responseImageUrl.imgUrl)
-    }, [responseImageUrl.imgUrl])
+    }, [responseImageUrl.imgUrl]);
 
     useEffect(() => {
         setImgUrlMobile(responseImageUrlMobile.imgUrl)
-    }, [responseImageUrlMobile.imgUrl])
+    }, [responseImageUrlMobile.imgUrl]);
+
+    const getButtonsList = (itemData) => {
+        const btnsArray = [];
+        const btnsMap = new Map();
+        const btnsArrayKeys = [];
+        let imageLinkUrl = '/';
+        let imageLinkUrlTitle = '';
+
+        for (const [key, value] of Object.entries(item)) {
+            if ( key.includes('btn')) {
+                const keyAsNumber = Number(key.match(/\d+/)[0]);
+                btnsMap.set(key, {id: key, ...value});
+                btnsArrayKeys.push(keyAsNumber);
+            }
+        }
+        
+        imageLinkUrl = btnsMap.get(`btn1`).link;
+        imageLinkUrlTitle = btnsMap.get(`btn1`).text;
+        
+        if (btnsArrayKeys.length > 0) {
+            btnsArrayKeys.sort((a, b) => a - b);
+            btnsArrayKeys.forEach((btnId) => {
+                btnsArray.push(
+                    <Link 
+                        key={btnsMap.get(`btn${btnId}`).id}
+                        to={btnsMap.get(`btn${btnId}`).link}
+                        className="btn btn-primary" 
+                        title={btnsMap.get(`btn${btnId}.value.text`)} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        {btnsMap.get(`btn${btnId}`).text} 
+                    </Link>
+                )
+            })
+        }
+
+        return [btnsArray, imageLinkUrl, imageLinkUrlTitle];
+    }
+
+    const [buttonsList, imageLinkUrl, imageLinkUrlTitle] = getButtonsList(item);
 
     return (
-        <section className="secondary-section post-item" id={item[0]}>
+        <section className="secondary-section post-item website-post" id={item.orderName}>
             <h2>{item.title}</h2>
             <p><span>Industry:</span> {item.industry}</p>
-            <p><span>Technology Leveraged:</span>{item.tech}</p>
+            <p><span>Technology Leveraged:</span>{item.technology}</p>
             <div className="container-buttons-inline">
-                <a href="/" className="btn btn-primary" title="Visit Site" target="_blank" rel="noopener noreferrer">Visit Site</a>
-                <a href="https://www.mokeez.com/blog/" className="btn btn-primary" title="Visit Live Blog" target="_blank" rel="noopener noreferrer">Visit Live Blog</a>
+                {(buttonsList.length > 0) && buttonsList}
             </div>
-            <a href="/" title="Visit Site" target="_blank" rel="noopener noreferrer">
-                <div className="image-container website">
-                { responseImageUrl.isLoading && <div className="img-placeholder websites"></div> }
+            <Link 
+                to={imageLinkUrl || ''}
+                title={imageLinkUrlTitle || ''} 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
+                <div className="image-container">
+                { responseImageUrl.isLoading && <div className="img-placeholder"></div> }
                 { responseImageUrl.fetchError && <p style={{color: "red"}}>{`Error: ${responseImageUrl.fetchError}`}</p> }
                 { !responseImageUrl.fetchError && !responseImageUrl.isLoading && 
                     <picture>
@@ -37,7 +83,7 @@ const WebsitePost = ({ item }) => {
                     </picture>
                 }
                 </div>
-            </a>
+            </Link>
         </section>
     )
 }

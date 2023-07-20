@@ -43,7 +43,7 @@ const VideoPost = ({ item }) => {
     const videosList = getVideoItemsList(item);
 
     return (
-        <section className="secondary-section post-item" id={item.orderName}>
+        <section className="secondary-section post-item video-post" id={item.orderName}>
             <h2>{item.title}</h2>
             {(videosList.length > 0) && videosList}
         </section>

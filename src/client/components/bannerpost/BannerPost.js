@@ -1,9 +1,9 @@
-import "./javascript-post.css";
+import "./banner-post.css";
 import { useState, useEffect } from 'react';
 import useImageUrl from '../../../hooks/useImageUrl';
 import { Link } from 'react-router-dom';
 
-const JavascriptPost = ({ item }) => {
+const BannerPost = ({ item }) => {
     const [imgUrl, setImgUrl] = useState('');
     const responseImageUrl = useImageUrl(item.img.url);
     const [imgUrlMobile, setImgUrlMobile] = useState('');
@@ -59,10 +59,8 @@ const JavascriptPost = ({ item }) => {
     const [buttonsList, imageLinkUrl, imageLinkUrlTitle] = getButtonsList(item);
 
     return (
-        <section className="secondary-section post-item javascript-post" id={item.orderName}>
+        <section className="secondary-section post-item banner-post" id={item.orderName}>
             <h2>{item.title}</h2>
-            <p><span>Industry:</span> {item.industry}</p>
-            <p><span>Technology Leveraged:</span>{item.technology}</p>
             <div className="container-buttons-inline">
                 {(buttonsList.length > 0) && buttonsList}
             </div>
@@ -88,4 +86,4 @@ const JavascriptPost = ({ item }) => {
     )
 }
 
-export default JavascriptPost;
+export default BannerPost;
