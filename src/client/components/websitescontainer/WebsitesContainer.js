@@ -1,7 +1,6 @@
 import WebsitePost from '../websitepost/WebsitePost';
 
 const WebsitesContainer = ({ items }) => {
-    console.log(items);
     return (
         <div id="websites-container">
             <article>

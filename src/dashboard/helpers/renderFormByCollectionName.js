@@ -40,7 +40,7 @@ const renderFormByCollectionName = (
                 isEditing={isEditing}
             />
         )
-        case 'websaites': return (
+        case 'websites': return (
             <WebsitePostForm 
                 handleChangeInput={handleChangeInput}
                 handleSubmit={handleSubmit}
