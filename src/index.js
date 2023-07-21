@@ -15,7 +15,7 @@ root.render(
   
   <React.StrictMode>
   <AuthProvider>
-    <BrowserRouter future={{ v7_startTransition: true }}>
+    <BrowserRouter future={{ v7_startTransition: true }} >
       <Routes>
         <Route path="/*" element={<App />} />
       </Routes>
