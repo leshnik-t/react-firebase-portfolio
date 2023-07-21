@@ -1,36 +1,40 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 const useFetchRealtimeFirebase = (dataUrl) => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(null);
     const [fetchError, setFetchError]  = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const mounted = useRef(true);
 
     useEffect(() => {
         const fetchData = async (url) => {
+            mounted.current = true;
             setIsLoading(true);
             try {
                 const response = await fetch(url);
                 if (!response.ok) throw Error('Did not receive data');
 
-                const listItems = await response.json();
-                const result = [];
-                for (const i in listItems) {
-                    result.push([i, listItems[i]]);
+                const json = await response.json();
+                
+                if (mounted.current) {
+                    setData(json);
+                    setFetchError(null); 
                 }
-
-                setData(result);
-                setFetchError(null);
-
             } catch (err) {
+                if (mounted.current) {
                     setFetchError(err.message);
                     setData([]);
+                }
             } finally {
-                setIsLoading(false);
+                if (mounted.current) {
+                    setIsLoading(false);
+                }
             }
         }
         
         fetchData(dataUrl);
-        
+
+        return () => mounted.current = false;
     }, [dataUrl]);
 
     return { data, fetchError, isLoading };

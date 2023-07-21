@@ -1,0 +1,33 @@
+.edit .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.edit .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 500px;
+}
+
+.edit .left {
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    min-width: 500px;
+}
+
+.edit form {
+    max-width: 500px;
+}
+
+.edit .alert-container {
+    margin: 0.9375rem 0rem;
+}
+
+@media screen and (min-width: 992px) {
+    .edit .content {
+        flex-direction: row; 
+    }
+}

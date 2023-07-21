@@ -1,0 +1,25 @@
+.new .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.new .left {
+    max-width: 500px;
+    min-width: 500px;
+}
+
+.new form {
+    max-width: 500px;
+}
+
+.new .alert-container {
+    margin: 0.9375rem 0rem;
+}
+
+@media screen and (min-width: 992px) {
+    .new .content {
+        flex-direction: row; 
+    }
+}

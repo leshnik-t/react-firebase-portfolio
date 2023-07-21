@@ -1,0 +1,31 @@
+.col-sticky {
+    position: fixed;
+    top: 3.55rem;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #fff;
+    z-index: 2;
+}
+.col-main {
+    position: relative;
+    margin-top: 2rem;
+    z-index: 1;
+}
+
+.sticky-navigation-container{
+    width: 100%;
+}
+
+@media screen and (min-width: 992px) {
+    .col-sticky {
+        max-width: 200px;
+        top: 5rem;
+    }
+    .col-main {
+        padding-left: 220px;
+    }
+} 

@@ -1,0 +1,44 @@
+.app article h1 {
+    margin-bottom: 3rem;
+    color: #6d64e8;
+    text-align: center;
+}
+
+.app .post-item p {
+    margin-bottom: 0rem;
+}
+
+.app .post-item p:last-child {
+    margin-bottom: 1rem; 
+}
+
+.app .post-item p > span {
+    font-weight: 700;
+}
+
+.app .container-buttons-inline {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 2rem 0rem;
+}
+
+.app .scroll-container {
+    position: relative;
+}
+
+@media screen and (min-width: 992px) {
+    .app article h1 {
+        text-align: left;
+    }
+    .app .container-buttons-inline {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+
+
+
