@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-firebase-portfolio/static/css/main.111c38fa.css",
-    "main.js": "/react-firebase-portfolio/static/js/main.5228c732.js",
+    "main.js": "/react-firebase-portfolio/static/js/main.8a252d75.js",
     "static/media/no-image-icon-0.jpg": "/react-firebase-portfolio/static/media/no-image-icon-0.6a775bd64913c4f650c6.jpg",
     "static/media/hero-image.png": "/react-firebase-portfolio/static/media/hero-image.be6c351267ce49fd3bb7.png",
     "static/media/web-design-frontend-development.jpg": "/react-firebase-portfolio/static/media/web-design-frontend-development.aa5b4607f3144f8c705c.jpg",
@@ -13,10 +13,10 @@
     "static/media/logo-line.png": "/react-firebase-portfolio/static/media/logo-line.8831c18966da5b640548.png",
     "index.html": "/react-firebase-portfolio/index.html",
     "main.111c38fa.css.map": "/react-firebase-portfolio/static/css/main.111c38fa.css.map",
-    "main.5228c732.js.map": "/react-firebase-portfolio/static/js/main.5228c732.js.map"
+    "main.8a252d75.js.map": "/react-firebase-portfolio/static/js/main.8a252d75.js.map"
   },
   "entrypoints": [
     "static/css/main.111c38fa.css",
-    "static/js/main.5228c732.js"
+    "static/js/main.8a252d75.js"
   ]
 }
