@@ -15,20 +15,20 @@ const Footer = () => {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col text-center">
+                        <div className="col text-center mb-5">
                             <p>&copy; {today.getFullYear()} All rights reserved.</p>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col text-center">
-                        <Link
-                            to="/login"
-                            className="btn btn-primary nav-link-small"
-                            title="Login"
-                            role="button"
-                        >
-                            Login
-                        </Link>
+                        <div className="col text-center mb-3">
+                            <Link
+                                to="/login"
+                                className="btn btn-primary nav-link-small"
+                                title="Login"
+                                role="button"
+                            >
+                                Login
+                            </Link>
                         </div>
                     </div>
                 </div>
