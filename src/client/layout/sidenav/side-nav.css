@@ -20,6 +20,7 @@
 }
 .sticky-navigation-container nav {
     max-height: calc(100vh - 10rem);
+    width: 100%;
     align-items: flex-start;
     overflow-x: hidden;
     overflow-y: auto;

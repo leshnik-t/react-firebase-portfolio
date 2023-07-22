@@ -1,0 +1,13 @@
+#contact {
+    width: 100%;
+}
+
+#contact h1 {
+    text-align: center;
+}
+
+#contact form, #contact .alert-container {
+    width: 100%;
+    max-width:500px;
+    margin: 0px auto;
+}
