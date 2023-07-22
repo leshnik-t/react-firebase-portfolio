@@ -1,7 +1,7 @@
 import '../sticky-navigation-page.css';
 import '../simple-page.css';
 import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { endPointWebsites } from '../../config/endPoints';
 import useFetchRealtimeFirebase from '../../../hooks/useFetchRealtimeFirebase';
 import processListData from '../../../helpers/processListData';

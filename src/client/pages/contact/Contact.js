@@ -1,7 +1,7 @@
 import './contact.css';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import Wrapper from '../../components/wrapper/Wrapper';
 
 const Contact = () => {

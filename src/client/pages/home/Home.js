@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import SectionCategories from '../../components/section/SectionCategories';
 import SectionHero from '../../components/section/SectionHero';
 import SectionLogos from '../../components/section/SectionLogos';
