@@ -11,3 +11,7 @@
     max-width:500px;
     margin: 0px auto;
 }
+
+#contact .description-message{
+    font-size: 0.625rem;
+}

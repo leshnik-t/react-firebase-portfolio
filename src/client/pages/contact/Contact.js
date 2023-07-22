@@ -148,7 +148,7 @@ const Contact = () => {
                                         htmlFor="message"
                                         className="form-label"
                                     >
-                                        Message:
+                                        Message*:
                                     </label>
                                     <textarea 
                                         className="form-control" 
@@ -162,6 +162,7 @@ const Contact = () => {
                                     >
                                     </textarea>
                                 </div>
+                                <p className="description-message">* The field is mandatory</p>
                                 <div className="text-center">
                                     <button 
                                         type="submit" 
