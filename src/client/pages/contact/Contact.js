@@ -1,14 +1,19 @@
 import './contact.css';
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import ReCAPTCHA from "react-google-recaptcha";
 import { Helmet } from 'react-helmet-async';
 import Wrapper from '../../components/wrapper/Wrapper';
 
 const Contact = () => {
     const form = useRef();
+    const reCaptcha = useRef();
     const [templateParams, setTemplateParams] = useState({});
     const [result, setResult] = useState(null);
     const [error, setError] = useState(null);
+    const [captchaDone, setCaptchaDone] = useState(false);
+    const [errorConnection, setErrorConnection] = useState(null);
+    const [fillCaptchaMessage, setFillCaptchaMessage] = useState(null);
 
     const handleChangeInput = (e) => {
         const name = e.target.name;
@@ -39,24 +44,58 @@ const Contact = () => {
         setTemplateParams(currentTemplateParams);
     }
 
-    const sendEmail = async (e) => {
+    const changeCaptchaHandler = () => {
+        setCaptchaDone(true);
+        setErrorConnection(null);
+        setFillCaptchaMessage(null);
+    }
+
+    const expiredCaptchaHandler = () => {
+        setCaptchaDone(false);
+        setErrorConnection(null);
+        setFillCaptchaMessage(null);
+    }
+
+    const erroredCaptchaHandler = () => {
+        setErrorConnection('Please, check your Internet connection');
+    }
+
+    const sendEmail = (e) => {
         e.preventDefault();
+        setFillCaptchaMessage(null);
+        setError(null);
+
+        if (!captchaDone) {
+            setFillCaptchaMessage("Please, click on I'm not a robot");
+            return;
+        }
+
         const emailjsServiceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
         const emailjsTemplateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
         const emailjsPublicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+        const captchaToken = reCaptcha.current.getValue();
+        reCaptcha.current.reset();
 
-        setError(null);
+        const params = {
+            ...templateParams,
+            'g-recaptcha-response': captchaToken
+        }
 
-        emailjs.sendForm(emailjsServiceID, emailjsTemplateID, form.current, emailjsPublicKey)
-        .then((result) => {
+        emailjs.send(emailjsServiceID, emailjsTemplateID, params, emailjsPublicKey)
+        .then((response) => {
+            console.log(response);
             setResult('Your message is sent!');
             setTimeout(() => {
                 setResult(null);
             }, 3000);
             setTemplateParams({});
         }, (error) => {
-            setError('Your message was not sent. Please, send again!');
+            setError('Your message was not sent. Please, submit again!');
+            setCaptchaDone(false);
             console.log(error.text);
+        })
+        .finally(() => {
+            setCaptchaDone(false);
         });
     };
 
@@ -96,15 +135,7 @@ const Contact = () => {
                     <div className="row">
                         <div className="col">
                             <h1>Contact</h1>
-                            <div className="alert-container">
-                                {result && 
-                                    <p className="alert alert-success text-center">{result}</p>
-                                }
-                                {error && 
-                                    <p className="alert alert-danger text-center">{error}</p>
-                                }
-                            </div>
-                            <form ref={form} onSubmit={(e) => sendEmail(e)}>
+                            <form ref={form} onSubmit={(e) => sendEmail(e)} className="mb-5">
                                 <div className="mb-3">
                                     <label 
                                         htmlFor="name"
@@ -162,16 +193,48 @@ const Contact = () => {
                                     >
                                     </textarea>
                                 </div>
-                                <p className="description-message">* The field is mandatory</p>
+                                <p className="description-message">* Fields are mandatory</p>
+                                <div className="mb-5 reCaptcha-container">
+                                    <ReCAPTCHA
+                                        ref={reCaptcha}
+                                        sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                                        hl={'en'}
+                                        onChange={changeCaptchaHandler}
+                                        onExpired={expiredCaptchaHandler}
+                                        onErrored={erroredCaptchaHandler}
+                                    />
+                                </div>
+                                {fillCaptchaMessage && 
+                                    <div className="alert-container">
+                                        <p className="alert alert-danger text-center">
+                                            {fillCaptchaMessage}
+                                        </p>
+                                    </div>
+                                }
+                                {errorConnection && 
+                                    <div className="alert-container">
+                                        <p className="alert alert-danger text-center">
+                                            {errorConnection}
+                                        </p>
+                                    </div>
+                                }
                                 <div className="text-center">
                                     <button 
                                         type="submit" 
                                         className="btn btn-primary"
                                     >
-                                        Send Email
+                                        Submit
                                     </button>
                                 </div>
                             </form>
+                            <div className="alert-container">
+                                {result && 
+                                    <p className="alert alert-success text-center">{result}</p>
+                                }
+                                {error && 
+                                    <p className="alert alert-danger text-center">{error}</p>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,7 @@
 {
   "name": "react-firebase-portfolio",
   "version": "0.1.0",
-  "homepage": "https://leshnik-t.github.io/react-firebase-portfolio",
+  "homepage": ".",
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -11,6 +11,7 @@
     "firebase": "^9.22.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^3.1.0",
     "react-helmet-async": "^1.3.0",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.13.0",
