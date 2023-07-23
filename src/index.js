@@ -17,7 +17,7 @@ root.render(
   <React.StrictMode>
   <AuthProvider>
     <HelmetProvider>
-      <BrowserRouter future={{ v7_startTransition: true }} basename='/react-firebase-portfolio' >
+      <BrowserRouter future={{ v7_startTransition: true }} >
         <Routes>
           <Route path="/*" element={<App />} />
         </Routes>
