@@ -94,9 +94,6 @@ const renderFormByCollectionName = (
                 item={item}
                 isEditing={isEditing}
                 percentage={percentage}
-                buttons={buttons}
-                handleAddButton={handleAddButton}
-                handleDeleteButton={handleDeleteButton}
             />
         )
         case 'logos': return (
