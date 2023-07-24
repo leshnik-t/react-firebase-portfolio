@@ -1,0 +1,159 @@
+.niceCountryInputMenu {
+    /*background: white !important;
+    color: black !important;*/
+    /*border: 1px solid #a8a8a8;*/
+    cursor: pointer;
+     /*
+    font-family: Arial;
+    font-size: 12px;
+    */
+}
+.niceCountryInputMenuDefaultText {
+    /*width: 270px;*/
+	width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.niceCountryInputMenuDefaultText a:hover {
+    text-decoration: none;
+}
+.niceCountryInputMenu a {
+    /*color: black !important;*/
+}
+.niceCountryInputMenuDropdown {
+    /*border-left: 1px solid #a8a8a8;*/
+    height: 25px;
+    width: 21px;
+    float: right;
+    line-height: 25px;
+    text-align: center;
+    position: relative;
+    right: 0;
+    color: black;
+}
+.niceCountryInputMenuDropdownContent {
+    border: 1px solid #a8a8a8;
+    border-top: 0;
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.niceCountryInputMenuDropdownContent a {
+    height: 25px;
+    line-height: 25px;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+	cursor:pointer;
+    /*
+    font-family: Arial;
+    font-size: 12px;
+    */
+}
+.niceCountryInputMenuDropdownContent a:hover {
+    background-color: #f5f5f5 !important;
+    text-decoration: none;
+}
+.niceCountryInputMenuFilter {
+    border: 1px solid #a8a8a8;
+    border-top: 0;
+    border-bottom: 0;
+}
+.niceCountryInputMenuFilter input {
+    width: 100%;
+    width: calc(100% - 10px);
+    margin: 5px;
+    padding: 5px;
+}
+.niceCountryInputMenuCountryFlag {
+    border: 1px solid #d3d3d3;
+    width: 18px;
+    height: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.niceCountryInputMenuCountryNoFlag {
+    display: inline-block;
+    border: 1px solid black;
+    background: white;
+    color: black;
+    line-height: 15px;
+    text-align: center;
+    width: 22px;
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 13px;
+}
+.niceCountryInputMenu{
+	width: 100%;
+    font-size: 12px;
+    position: relative;
+    background-color: #F8F8F8;
+    padding: 14px 0;
+}
+.niceCountryInputMenuDefaultText{
+	position: relative;
+	padding-right: 18px;
+	width:100%;
+}
+.niceCountryInputMenuDropdown{
+	position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -15px;
+}
+.niceCountryInputMenuDefaultText > a , .niceCountryInputMenuDropdownContent > a{
+	position: relative;
+}
+.niceCountryInputMenuDefaultText > a img, .niceCountryInputMenuDropdownContent > a > img{
+	position: absolute;
+	left:0px;
+	top:4px;
+}
+.niceCountryInputMenuDropdownContent > a > img{
+	top:8px;
+}
+.niceCountryInputMenuDefaultText > a span, .niceCountryInputMenuDropdownContent > a > span{
+	color:#1f2836 !important;
+	padding-left:25px;
+}
+.niceCountryInputMenuCountryFlag {
+    width: 14px;
+    height: 10px;
+}
+.niceCountryInputMenuFilter, .niceCountryInputMenuDropdownContent{
+	position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    width: 100%;
+    padding: 5px 0;
+    margin:0;
+    font-size: 12px;
+    text-align: left;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: none;
+    border-radius: 0px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175)
+}
+.niceCountryInputMenuDropdownContent{
+	top:110px;
+}
+#countryPicker{
+	width: 150px;
+    padding: 8px 0px;
+	position: relative;
+}
+@media (max-width: 767px) {
+	#countryPicker{
+		width:100%;
+	}
+}

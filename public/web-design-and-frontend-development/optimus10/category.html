@@ -1,0 +1,905 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="rating" content="general">
+    <meta name="revisit-after" content="1day">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+	<link href="css/niceCountryInput.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+	<title>Optimus10.com : Category</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/niceCountryInput.js"></script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="wrapper">
+				<div class="navbar-header">
+					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+					  <a class="navbar-brand" href="index.html">
+						  <img src="images/optimus10-logo.png" alt="optimus10.com logo"/>
+					  </a>
+				</div>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<div class="wrapper">
+					<ul class="nav navbar-nav navbar-right-top-menu">
+						<li class="menuBtnRight">
+							<div id="countryPicker" data-selectedcountry="GB" data-showspecial="false"
+								data-showflags="true" data-i18nall="All selected" data-i18nnofilter="No selection" 
+								data-i18nfilter="Filter" data-onchangecallback="onChangeCallback">
+							</div>
+							<script>
+								function onChangeCallback(ctr){
+									console.log("The country was changed: " + ctr);
+								}
+								$(document).ready(function () {
+									new NiceCountryInput($("#countryPicker")).init();
+									$(document).click(function (e) {
+										e.stopPropagation();
+										var container = $("#countryPicker");
+										
+										//check if the clicked area is CountryPicker or not
+										if (container.has(e.target).length === 0) {
+											$(".niceCountryInputMenuFilter").hide();
+											$(".niceCountryInputMenuDropdownContent").hide();
+											
+										}
+										
+									})
+									$(".dropdown-toggle").on("click",function () {
+																		
+										//hide countryPicker dropdown if another toglledown button is clicked
+										if ($(".niceCountryInputMenuFilter").css("display")==="block") {
+											$(".niceCountryInputMenuFilter").hide();
+											$(".niceCountryInputMenuDropdownContent").hide();
+											
+										}
+										
+									})
+								});
+							</script>
+					 	</li>
+						<li class="dropdown menuBtnRight">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="text-uppercase">Categories</span><span class="spriteSmallIcons arrow"></span></a>
+						  <ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						  </ul>
+						</li>
+				  	</ul>
+				</div>
+				<div class="clearfix"></div>	
+				<!-- begin submenu         -->
+				<div class="submenuTopLine"></div>
+				<div class="wrapper clearfix">
+					<div class="container-fluid">
+						<div class="submenuHeader">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="#">Top10 Dating <span class="sr-only">(current)</span></a></li>
+								<li><a href="#">Over 50</a></li>
+								<li><a href="#">Gays</a></li>
+								<li><a href="#">Professionals</a></li>
+								<li><a href="#">Black Singles</a></li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="spriteSmallIcons arrow"></span></a>
+								  <ul class="dropdown-menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">One more separated link</a></li>
+								  </ul>
+								</li>
+							  </ul>
+							  <ul class="nav navbar-nav navbar-right">
+								<li><a href="review.html">Review</a></li>
+								<li><a href="article.html">Top Reads</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle lastItemMenu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compare<span class="spriteSmallIcons arrow"></span></a>
+									  <ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">One more separated link</a></li>
+									  </ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- end submenu      -->
+					
+			</div><!-- /.navbar-collapse -->
+		</nav>
+	</header>
+	<section class="breadCrumbContainer">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+						<ol class="breadcrumb">
+						  <li><a href="#">Home</a></li>
+						  <li><a href="#">Lifestyle </a></li>
+						  <li class="active">Dating</li>
+						</ol>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+						<div class="alignRightNotMobile">
+							<div class="linkContainerPadding">
+								<a href="#" title="Advertising Disclosure">Advertising Disclosure</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<article class="categoryArticleContainer">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-lg-push-9 col-md-push-9 col-sm-push-9">
+						<div class="categoryArticleImageContainer">
+							<img src="images/content/household-big-300x170.jpg" alt="category dating"/>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 col-lg-pull-3 col-md-pull-3 col-sm-pull-3">
+						<h1>Best <span class="textRed">Dating</span> Sites 2019</h1>
+						<h2>Key features to compare:</h2>
+						<div class="row">
+							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+								<div class="categoryArticleCheckOption">
+									<h3><span><img src="images/check-green.svg" alt="check" width="24" height="24"/></span> Is the site personalized?</h3>
+									<p>The best dating sites offer specialized matchmaking services</p>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+								<div class="categoryArticleCheckOption">
+									<h3><span><img src="images/check-green.svg" alt="check" width="24" height="24"/></span> How big is the dating pool?</h3>
+									<p>The wider the pool, the more likely you are to meet ideal matches</p>
+								</div>
+							</div>
+							<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+								<div class="categoryArticleCheckOption">
+									<h3><span><img src="images/check-green.svg" alt="check" width="24" height="24"/></span> What are the safety measures?</h3>
+									<p>The wider the pool, the more likely you are to meet ideal matches</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</article>
+	<section class="mainHomeContainer">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+						<section class="topItemsContainer">
+							<h2 class="sectionHeading">optimus10.com <span class="textRed">selects</span></h2>
+							<!--            begin 01 item              -->
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">01</div><div class="topItemStatus">Most Popular Choice</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/zoosk.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Zoosk</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<!--            end 01 item              -->
+							<!---     begin all itmes           -->
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">02</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/match.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Match</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">03</div><div class="topItemStatus">Dating Over 50</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/zoosk.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Zoosk</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">04</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/match.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Match</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">05</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/zoosk.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Zoosk</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">06</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/match.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Match</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">07</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/zoosk.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Zoosk</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">08</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/match.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Match</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">09</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/zoosk.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Zoosk</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="index.html" rel="noopener nofollow" target="_blank">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemStatusContainer">
+												<div class="topItemNum">10</div>
+											</div>
+											<div class="topItemLogoContainer">
+												<img src="images/content/logos/match.png" alt="Zoosk logo" width="120" height="40"/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-2 col-md-pull-2 col-sm-pull-2">
+											<div class="topItemDescContainer">
+												<h3 class="marginBottom15">Match</h3>
+												<p>Better chances of finding someone who's just your style</p>
+												<ul>
+													<li><span class="spriteSmallIcons positive"></span>Best for: everyone</li>
+													<li><span class="spriteSmallIcons positive"></span>Favorite feature: photo verification</li>
+													<li><span class="spriteSmallIcons positive"></span>Special offer:15% off any subscription</li>
+												</ul>
+												<a href="review.html" title="Read Review" class="linkBlue">Read Review</a>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+								<!---     end all itmes           -->
+						</section>
+						<article class="categoryArticleContainer2">
+							<header>
+								<h2>How to Choose the Right Dating Site</h2>
+								<p>These are the top dating sites on the market today. Read on for in-depth details on features, plans, and pricing. </p>
+							</header>
+							<!--                  begin first section, describing current item      -->
+							<section class="itemArticleContainer articleContainer">
+								<h2>Zoosk</h2>
+								<ul>
+									<li>Expert machine learning match algorithm</li>
+									<li>Fantastic mobile app</li>
+									<li>Fun match search and profile promotion</li>
+								</ul>
+								<p>
+									Zoosk is certainly the cool kid on the block. With a fresh and fun approach to online dating,  Zoosk helps singles find their matches in a simple and non-burdensome way. To start with, you don’t waste hours taking boring questionnaires for the system to learn about you and your preferences. Instead, Zoosk is simplicity at its best. It displays a single profile at a time, lets you look it over and decide what to do next without all of the distractions of news feeds and messages dividing your attention.
+								</p>
+								<p>
+									Remember, Zoosk has roughly 38 million members, so you have an impressive dating pool to wade through. Most people appreciate the fun gimmicks Zoosk uses to help promote your profile to other singles. You can purchase things like mega flirts or profile boosters. Of course, Zoosk lets you take the quieter route too, playing the matchmaker with its Behavioral Matchmaking engine. This is a sophisticated algorithm that creates matches based on your preferences. 
+								</p>
+								<a href="review.html" title="Read the full review" class="linkBlue">Read the full review</a>
+								<div class="itemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+											<div class="itemContainerHeading">
+												<div class="itemContainerThumb">
+													<img src="images/content/logos/zoosk70x70.png" alt=""/>
+												</div>
+												<h3>Zoosk</h3>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!--                  end first section, describing current item      -->
+							<!--                  begin second section, describing current item      -->
+							<section class="itemArticleContainer articleContainer">
+								<h2>Zoosk</h2>
+								<ul>
+									<li>Expert machine learning match algorithm</li>
+									<li>Fantastic mobile app</li>
+									<li>Fun match search and profile promotion</li>
+								</ul>
+								<p>
+									Zoosk is certainly the cool kid on the block. With a fresh and fun approach to online dating,  Zoosk helps singles find their matches in a simple and non-burdensome way. To start with, you don’t waste hours taking boring questionnaires for the system to learn about you and your preferences. Instead, Zoosk is simplicity at its best. It displays a single profile at a time, lets you look it over and decide what to do next without all of the distractions of news feeds and messages dividing your attention.
+								</p>
+								<p>
+									Remember, Zoosk has roughly 38 million members, so you have an impressive dating pool to wade through. Most people appreciate the fun gimmicks Zoosk uses to help promote your profile to other singles. You can purchase things like mega flirts or profile boosters. Of course, Zoosk lets you take the quieter route too, playing the matchmaker with its Behavioral Matchmaking engine. This is a sophisticated algorithm that creates matches based on your preferences. 
+								</p>
+								<a href="review.html" title="Read the full review" class="linkBlue">Read the full review</a>
+								<div class="itemContainer">
+									<div class="row">
+										<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+											<div class="itemContainerHeading">
+												<div class="itemContainerThumb">
+													<img src="images/content/logos/zoosk70x70.png" alt=""/>
+												</div>
+												<h3>Zoosk</h3>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+											<div class="topItemButtonContainer alignRightNotMobile">
+												<a href="#" title="Visit Site" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Visit Site</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+							<!--                  end second section, describing current item      -->
+							<!--                  begin of the rest of the article 2              -->
+							<section class="articleContainer">
+								<h2>Choose the Right Dating Site: 4 Questions to Guide Your Decision</h2>
+								<h3>1 - What Type of Relationship Are You Looking For?</h3>
+								<p>
+									<a href="#">Before deciding which dating site to</a> sign up for, consider your desired outcome. Whether you’re looking to meet interesting people, start dating again after a heartbreak or searching for that person to start a family with, dating sites aren’t a “one size fits all” deal.
+								</p>
+								<p>
+									EliteSingles, for example, is best suited for daters seeking a serious relationship. While signing up is a lengthy process involving a thorough questionnaire, the result is quality matches with the potential for long-term commitment.
+								</p>
+								<p>
+									Another site for people looking for a serious relationship, is OurTime, which is dedicated to singles over the age of 50 looking for companionship, love, and romance.
+								</p>
+								<p>
+									No matter what type of relationship you’re looking for, there’s a dating site—or multiple sites—to meet your needs. Compare some of the best sites to help guide your decision.
+								</p>
+								<h3>2 - Do You Prefer Being Matched or Searching Independently?</h3>
+								<p>
+									Personal preferences matter with online dating—just as they do with offline dating. Some people want to search through profiles before deciding who to chat with, while others feel more comfortable being set up. Luckily, the world of online dating has answers for both.
+								</p>
+								<h4>
+									Matchmaker, matchmaker, make me a match:
+								</h4>
+								<p>
+									One of the major benefits of using a dating site is the ability to filter potential matches according to the values and characteristics that matter most to you. This immediate screening saves time and energy by ruling out people who aren’t compatible.
+								</p>
+								<h4>The search:</h4>
+								<p>
+									Another benefit of online dating is the options. Dating sites bring together enormous numbers of singles, who may have otherwise never met. Using the search filters, you can explore your options based on specific preferences.
+								</p>
+								<p>
+									Match offers extensive search filters and sorting functionality. Basic filters include parameters such as gender, age, and location, along with more specific fields such as background, interests, and lifestyle.
+								</p>
+								<h3>
+									3 - Which Features Matter Most?
+								</h3>
+								<p>
+									While dating sites all provide singles with the same essential service—a platform to meet new people and find a potential partner—each site does it in a different way.
+								</p>
+								<p>
+									Compare the features available on the best dating sites to choose the right one for you. Differentiating features include online chat or video chat, safety features like photo verification, and dating games. Choose a dating site that offers the features which are most important to you.
+								</p>
+							</section>
+							<!--                  end of the rest of the article 2              -->
+						</article>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						<section class="rightColumnContainer">
+							<aside>
+								<h2 class="sectionHeading">Must Reads</h2>
+								<div class="asideGreyBlock">
+									<a href="article.html">
+										<div class="asideMustReadItem">
+											<div class="asideMustReadThumb">
+												<img src="images/content/household-thumb.jpg" alt=""/>
+											</div>
+											<h3>The Best Home Warranty for A/C and Heating</h3>
+										</div>
+									</a>
+									<a href="article.html">
+										<div class="asideMustReadItem">
+											<div class="asideMustReadThumb">
+												<img src="images/content/household-thumb.jpg" alt=""/>
+											</div>
+											<h3>The Best Home Warranty for A/C and Heating</h3>
+										</div>
+									</a>
+									<a href="article.html">
+										<div class="asideMustReadItem">
+											<div class="asideMustReadThumb">
+												<img src="images/content/household-thumb.jpg" alt=""/>
+											</div>
+											<h3>The Best Home Warranty for A/C and Heating</h3>
+										</div>
+									</a>
+									<a href="#" title="Read all articles" class="linkBlue">Read all articles</a>
+								</div>
+							</aside>
+							<aside>
+								<h2 class="sectionHeading">Editorial reviews</h2>
+								<div class="asideGreyBlock">
+									<div class="navAsideMenu">
+										<div class="row">
+											<div class="col-xs-4 col-sm-4 col-md-12 col-lg-4">
+												<a href="#" title="Editorially researched">Editorially researched</a>
+											</div>
+											<div class="col-xs-4 col-sm-4 col-md-12 col-lg-4 dottedBorders">
+												<a href="#" title="Unbiased information">Unbiased information</a>
+											</div>
+											<div class="col-xs-4 col-sm-4 col-md-12 col-lg-4">
+												<a href="#" title="Highlights, pros &amp; cons">Highlights, pros &amp; cons</a>
+											</div>
+										</div>
+									</div>
+									<a href="article.html">
+										<div class="asideEditorialItem">
+											<div class="asideEditorialThumb">
+												<img src="images/content/logos/zoosk70x70.png" alt=""/>
+											</div>
+											<h3>Zoosk</h3>
+											<a href="#" title="Read Review" class="linkBlue">Read Review</a>
+										</div>
+									</a>
+									<a href="article.html">
+										<div class="asideEditorialItem">
+											<div class="asideEditorialThumb">
+												<img src="images/content/logos/zoosk70x70.png" alt=""/>
+											</div>
+											<h3>Zoosk</h3>
+											<a href="#" title="Read Review" class="linkBlue">Read Review</a>
+										</div>
+									</a>
+									<a href="article.html">
+										<div class="asideEditorialItem">
+											<div class="asideEditorialThumb">
+												<img src="images/content/logos/zoosk70x70.png" alt=""/>
+											</div>
+											<h3>Zoosk</h3>
+											<a href="#" title="Read Review" class="linkBlue">Read Review</a>
+										</div>
+									</a>
+									<a href="#" title="Read all reviews" class="linkBlue">Read all reviews</a>
+								</div>
+							</aside>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="sectionBottom sectionGreyContainer">
+		<div class="wrapper2">
+			<div class="categoriesContainer">
+				<header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+							<h2>Explore more optimus10.com Categories</h2>
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<div class="alignRightNotMobile">
+								<a href="#" title="View all shortlists" class="linkBlue">View all shortlists</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/finance-icon.svg" alt="Finance"/>
+								</div>
+								<h3>Finance</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/psychic-icon.svg" alt="Psychic"/>
+								</div>
+								<h3>Psychic</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/tech-icon.svg" alt="Tech"/>
+								</div>
+								<h3>Tech</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/lifestyle-icon.svg" alt="Lifestyle"/>
+								</div>
+								<h3>Lifestyle</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/finance-icon.svg" alt="Entertainment"/>
+								</div>
+								<h3>Entertainment</h3>
+							</div>
+							</a>
+						</div>
+						<!-- second row             -->
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/finance-icon.svg" alt="Finance"/>
+								</div>
+								<h3>Finance</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/psychic-icon.svg" alt="Psychic"/>
+								</div>
+								<h3>Psychic</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/tech-icon.svg" alt="Tech"/>
+								</div>
+								<h3>Tech</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/lifestyle-icon.svg" alt="Lifestyle"/>
+								</div>
+								<h3>Lifestyle</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/finance-icon.svg" alt="Entertainment"/>
+								</div>
+								<h3>Entertainment</h3>
+							</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer id="mainFooter">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-lg-push-3 col-md-push-3">
+						<nav>
+							<ul class="footerNavigation">
+								<li><a href="#" title="About us">About us</a></li>
+								<li><a href="#" title="Advertising Disclosure">Advertising Disclosure</a></li>
+								<li><a href="#" title="Terms of Use">Terms of Use</a></li>
+								<li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+								<li><a href="#" title="Partner with us">Partner with us</a></li>
+								<li><a href="#" title="Contact">Contact</a></li>
+							</ul>
+							<p>
+								Designed to help users make confident decisions online, this website contains information about a wide range of products and services. Certain details, including but not limited to prices and special offers, are provided to us directly from our partners and are dynamic and subject to change at any time without prior notice. Though based on meticulous research, the information we share does not constitute legal or professional advice or forecast, and should not be treated as such.
+							</p>
+							<p>
+								Reproduction in whole or in part is strictly prohibited.
+							</p>
+						</nav>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-lg-pull-9 col-md-pull-9">
+						<p>
+							<img src="images/optimus10-logo-black.png" alt="optimus10.com logo"/>
+						</p>
+						<p>
+							Copyright &copy; 2009-2019 optimus10.com
+							All Rights Reserved.
+						</p>
+						<p> 
+							By using our content, products & services you agree to our <a href="#" title="">Terms of Service</a> and <a href="#" title="">Privacy Policy</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

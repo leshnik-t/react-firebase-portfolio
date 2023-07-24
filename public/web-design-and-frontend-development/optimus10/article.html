@@ -1,0 +1,907 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="rating" content="general">
+    <meta name="revisit-after" content="1day">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+	<link href="css/niceCountryInput.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+	<title>Optimus10.com : Category</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/niceCountryInput.js"></script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="wrapper">
+				<div class="navbar-header">
+					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+					  <a class="navbar-brand" href="index.html">
+						  <img src="images/optimus10-logo.png" alt="optimus10.com logo"/>
+					  </a>
+				</div>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<div class="wrapper">
+					<ul class="nav navbar-nav navbar-right-top-menu">
+						<li class="menuBtnRight">
+							<div id="countryPicker" data-selectedcountry="GB" data-showspecial="false"
+								data-showflags="true" data-i18nall="All selected" data-i18nnofilter="No selection" 
+								data-i18nfilter="Filter" data-onchangecallback="onChangeCallback">
+							</div>
+							<script>
+								function onChangeCallback(ctr){
+									console.log("The country was changed: " + ctr);
+								}
+								$(document).ready(function () {
+									new NiceCountryInput($("#countryPicker")).init();
+									$(document).click(function (e) {
+										e.stopPropagation();
+										var container = $("#countryPicker");
+										
+										//check if the clicked area is CountryPicker or not
+										if (container.has(e.target).length === 0) {
+											$(".niceCountryInputMenuFilter").hide();
+											$(".niceCountryInputMenuDropdownContent").hide();
+											
+										}
+										
+									})
+									$(".dropdown-toggle").on("click",function () {
+																		
+										//hide countryPicker dropdown if another toglledown button is clicked
+										if ($(".niceCountryInputMenuFilter").css("display")==="block") {
+											$(".niceCountryInputMenuFilter").hide();
+											$(".niceCountryInputMenuDropdownContent").hide();
+											
+										}
+										
+									})
+								});
+							</script>
+					 	</li>
+						<li class="dropdown menuBtnRight">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="text-uppercase">Categories</span><span class="spriteSmallIcons arrow"></span></a>
+						  <ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						  </ul>
+						</li>
+				  	</ul>
+				</div>
+				<div class="clearfix"></div>	
+				<!-- begin submenu         -->
+				<div class="submenuTopLine"></div>
+				<div class="wrapper clearfix">
+					<div class="container-fluid">
+						<div class="submenuHeader">
+							<ul class="nav navbar-nav">
+								<li><a href="#">Top10 Dating <span class="sr-only">(current)</span></a></li>
+								<li><a href="#">Over 50</a></li>
+								<li><a href="#">Gays</a></li>
+								<li><a href="#">Professionals</a></li>
+								<li><a href="#">Black Singles</a></li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="spriteSmallIcons arrow"></span></a>
+								  <ul class="dropdown-menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">One more separated link</a></li>
+								  </ul>
+								</li>
+							  </ul>
+							  <ul class="nav navbar-nav navbar-right">
+								<li><a href="review.html">Review</a></li>
+								<li class="active"><a href="article.html">Top Reads</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle lastItemMenu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compare<span class="spriteSmallIcons arrow"></span></a>
+									  <ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">One more separated link</a></li>
+									  </ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- end submenu      -->
+					
+			</div><!-- /.navbar-collapse -->
+		</nav>
+	</header>
+	<section class="breadCrumbContainer">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+						<ol class="breadcrumb">
+						  	<li><a href="#">Home</a></li>
+						  	<li><a href="#">Lifestyle </a></li>
+							<li><a href="#">Dating </a></li>
+							<li><a href="#">Top Reads </a></li>
+							<li class="active">Zoosk Article</li>
+						</ol>
+					</div>
+					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+						<div class="alignRightNotMobile">
+							<div class="linkContainerPadding">
+								<a href="#" title="Advertising Disclosure">Advertising Disclosure</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="mainHomeContainer">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+						<section class="mainArticleContainer">
+							<div class="row">
+								<div class="col-sm-2 col-md-2 col-lg-2">
+									<div id="stickyNavigationContainer" class="hidden-xs">
+										<div class="socialIconsContainer">
+											<a href="#" title="Share on Facebook"><span class="spriteSmallIcons facebook"></span></a>
+											<a href="#" title="Share on Twitter"><span class="spriteSmallIcons twitter"></span></a>
+										</div>
+										<h2>Jump to:</h2>
+										<div id="stickyNavigation">
+											<nav>
+												<ul>
+													<li><a href="#sec1">What to consider when choosing a home DNA kit </a></li>
+													<li><a href="#sec2">Here Are the Best DNA Testing Kits</a></li>
+													<li><a href="#sec3">1. MyHeritageDNA</a></li>
+													<li><a href="#sec4">2. MyHeritageDNA</a></li>
+													<li><a href="#sec5">3. MyHeritageDNA</a></li>
+													<li><a href="#sec6">4. MyHeritageDNA</a></li>
+													<li><a href="#sec7">DNA Test Kits Compared</a></li>
+													<li><a href="#sec8">Mapping the Story of You</a></li>
+												</ul>
+											</nav>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
+									<article class="articleContainer">
+										<header>
+											<h1>Zoosk Article: The Best DNA Tests 2019 - Learn About Your Ancestry, Ethnicity, and Genetic Heritage</h1>
+											<span>By Top10.com Staff Mar. 07, 2019</span>
+										</header>
+										
+										<div class="articleImageContainer">
+											<img src="images/content/dating.jpg" alt=""/>
+										</div>
+										<p>
+											<strong>By now you’ve probably heard a friend, co-worker, or loved one tell you about the surprising, weird, even funny experience they had taking a DNA test. Far from being relegated to people with access to sophisticated laboratories, testing your DNA has now become something that anybody can do at home on their own for an affordable price.</strong>
+										</p>
+										<p>
+											Whether you’re looking for something casual or a serious relationship, Zoosk is a fun and easy-to-use dating website that can help connect you with the right person. With 3.8 million visits each month and a database of more than 35 million singles, your chances of meeting someone special are high. If you’re looking for love and want to see if Zoosk is the right service to help you find your match, read on.
+										</p>
+										<section id="sec1">
+											<h2>What to consider when choosing a home DNA kit</h2>
+											<p>
+												Like countless other purchases in life, when it comes to ordering a home DNA kit, it’s crucial you determine what’s most important for you. If you’re most interested in family genealogical research, your best bet would be to go with a company like MyHeritage or AncestryDNA. With both of these companies you can also access a massive database of billions of historical records, as well as trace your roots through the family tree builder. In addition, the companies have millions and millions of users in their databases and can match you with relatives, so if you’re looking to find long lost family members, companies like these are your best bet. If you’re looking to learn more about your personal health and also perhaps get tips for nutrition and exercise, then companies like Vitagene, 23andMe and Orig3n may be better options. Other than 23andMe—which combines ancestry mapping with health assessments—the kits aren’t marketed toward users who are interested in deep, extensive genealogical research, rather, they are interested in learning about their health through DNA testing. Finally, you should also consider how important it is to you that the company does more than just autosomal testing and if it travels across enough geographic regions for mapping your ancestry, or if you want a company like GPSorigins which looks at more than 900 geographic regions.
+											</p>
+										</section>
+										<section id="sec2">
+											<h2>Here Are the Best DNA Testing Kits</h2>
+										</section>
+										<section id="sec3">
+											<h2>1. MyHeritageDNA</h2>
+											<h3>Tops in discovering origins</h3>
+											<ul>
+												<li>$59 per DNA testing kit (on discount, regular price $79)</li>
+												<li>DNA matching</li>
+												<li>One of the best family tree builders on the market</li>
+											</ul>
+
+											<p>
+												Like countless other purchases in life, when it comes to ordering a home DNA kit, it’s crucial you determine what’s most important for you. If you’re most interested in family genealogical research, your best bet would be to go with a company like MyHeritage or AncestryDNA. With both of these companies you can also access a massive database of billions of historical records, as well as trace your roots through the family tree builder. In addition, the companies have millions and millions of users in their databases and can match you with relatives, so if you’re looking to find long lost family members, companies like these are your best bet. If you’re looking to learn more about your personal health and also perhaps get tips for nutrition and exercise, then companies like Vitagene, 23andMe and Orig3n may be better options. Other than 23andMe—which combines ancestry mapping with health assessments—the kits aren’t marketed toward users who are interested in deep, extensive genealogical research, rather, they are interested in learning about their health through DNA testing. Finally, you should also consider how important it is to you that the company does more than just autosomal testing and if it travels across enough geographic regions for mapping your ancestry, or if you want a company like GPSorigins which looks at more than 900 geographic regions.
+											</p>
+											<p>
+												Once you’ve gone through the setup process, Zoosk lets you dive right in. You’re automatically shown a profile that matches your basic details. One of Zoosk’s strongest points is its matchmaking algorithm that finds you the best matches
+											</p>
+											<h3>There are 3 ways to get matched:1. Behavioral Matchmaking</h3>
+											<p>
+												Behavioral Matchmaking is kind of like machine learning in the dating field. The system learns your preferences, likes, and dislikes, so it can continuously give you more accurate results. It is one of the most sophisticated ways to find matches and is known to be incredibly successful. Zoosk will send you 1 match a day that you can respond to or decline.
+											</p>
+											<p>
+												<strong>If you have more of a hands-on</strong> approach to dating, you can manually search through Zoosk’s database to find your own matches. This is easy to do; simply click from one profile to the next until you see one that is appealing to you. You can see other members’ profile pics, age, and location to make a quick decision as to whether or not you’re interested in going further. If you are, there are quick messaging options (we’ll discuss that in the communications section below). You can also edit your search to get more specific results, using filters like age, location, distance, ethnicity, and relationship status.
+											</p>
+											<h3>There are 3 ways to get matched:1. Behavioral Matchmaking</h3>
+											<p>
+												Behavioral Matchmaking is kind of like machine learning in the dating field. The system learns your preferences, likes, and dislikes, so it can continuously give you more accurate results. It is one of the most sophisticated ways to find matches and is known to be incredibly successful. Zoosk will send you 1 match a day that you can respond to or decline.
+											</p>
+											<p>
+												<strong>If you have more of a hands-on</strong> approach to dating, you can manually search through Zoosk’s database to find your own matches. This is easy to do; simply click from one profile to the next until you see one that is appealing to you. You can see other members’ profile pics, age, and location to make a quick decision as to whether or not you’re interested in going further. If you are, there are quick messaging options (we’ll discuss that in the communications section below). You can also edit your search to get more specific results, using filters like age, location, distance, ethnicity, and relationship status.
+											</p>
+											<a href="review.html" title="Read the full MyHeritage DNA review" class="linkBlue">Read the full MyHeritage DNA review</a>
+											<div class="itemContainer">
+												<div class="row">
+													<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+														<div class="itemContainerHeading">
+															<div class="itemContainerThumb">
+																<img src="images/content/logos/zoosk70x70.png" alt=""/>
+															</div>
+															<h3>MyHeritageDNA</h3>
+														</div>
+													</div>
+													<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+														<div class="topItemButtonContainer alignRightNotMobile">
+															<a href="#" title="Order now" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Order now</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+										<section id="sec4">
+											<h2>2. MyHeritageDNA</h2>
+											<h3>Tops in discovering origins</h3>
+											<ul>
+												<li>$59 per DNA testing kit (on discount, regular price $79)</li>
+												<li>DNA matching</li>
+												<li>One of the best family tree builders on the market</li>
+											</ul>
+
+											<p>
+												Like countless other purchases in life, when it comes to ordering a home DNA kit, it’s crucial you determine what’s most important for you. If you’re most interested in family genealogical research, your best bet would be to go with a company like MyHeritage or AncestryDNA. With both of these companies you can also access a massive database of billions of historical records, as well as trace your roots through the family tree builder. In addition, the companies have millions and millions of users in their databases and can match you with relatives, so if you’re looking to find long lost family members, companies like these are your best bet. If you’re looking to learn more about your personal health and also perhaps get tips for nutrition and exercise, then companies like Vitagene, 23andMe and Orig3n may be better options. Other than 23andMe—which combines ancestry mapping with health assessments—the kits aren’t marketed toward users who are interested in deep, extensive genealogical research, rather, they are interested in learning about their health through DNA testing. Finally, you should also consider how important it is to you that the company does more than just autosomal testing and if it travels across enough geographic regions for mapping your ancestry, or if you want a company like GPSorigins which looks at more than 900 geographic regions.
+											</p>
+											<p>
+												Once you’ve gone through the setup process, Zoosk lets you dive right in. You’re automatically shown a profile that matches your basic details. One of Zoosk’s strongest points is its matchmaking algorithm that finds you the best matches
+											</p>
+											<h3>There are 3 ways to get matched:1. Behavioral Matchmaking</h3>
+											<p>
+												Behavioral Matchmaking is kind of like machine learning in the dating field. The system learns your preferences, likes, and dislikes, so it can continuously give you more accurate results. It is one of the most sophisticated ways to find matches and is known to be incredibly successful. Zoosk will send you 1 match a day that you can respond to or decline.
+											</p>
+											<p>
+												<strong>If you have more of a hands-on</strong> approach to dating, you can manually search through Zoosk’s database to find your own matches. This is easy to do; simply click from one profile to the next until you see one that is appealing to you. You can see other members’ profile pics, age, and location to make a quick decision as to whether or not you’re interested in going further. If you are, there are quick messaging options (we’ll discuss that in the communications section below). You can also edit your search to get more specific results, using filters like age, location, distance, ethnicity, and relationship status.
+											</p>
+											<h3>There are 3 ways to get matched:1. Behavioral Matchmaking</h3>
+											<p>
+												Behavioral Matchmaking is kind of like machine learning in the dating field. The system learns your preferences, likes, and dislikes, so it can continuously give you more accurate results. It is one of the most sophisticated ways to find matches and is known to be incredibly successful. Zoosk will send you 1 match a day that you can respond to or decline.
+											</p>
+											<p>
+												<strong>If you have more of a hands-on</strong> approach to dating, you can manually search through Zoosk’s database to find your own matches. This is easy to do; simply click from one profile to the next until you see one that is appealing to you. You can see other members’ profile pics, age, and location to make a quick decision as to whether or not you’re interested in going further. If you are, there are quick messaging options (we’ll discuss that in the communications section below). You can also edit your search to get more specific results, using filters like age, location, distance, ethnicity, and relationship status.
+											</p>
+											<a href="review.html" title="Read the full MyHeritage DNA review" class="linkBlue">Read the full MyHeritage DNA review</a>
+											<div class="itemContainer">
+												<div class="row">
+													<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+														<div class="itemContainerHeading">
+															<div class="itemContainerThumb">
+																<img src="images/content/logos/zoosk70x70.png" alt=""/>
+															</div>
+															<h3>MyHeritageDNA</h3>
+														</div>
+													</div>
+													<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+														<div class="topItemButtonContainer alignRightNotMobile">
+															<a href="#" title="Order now" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Order now</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+										<section id="sec5">
+											<h2>3. MyHeritageDNA</h2>
+											<h3>Tops in discovering origins</h3>
+											<ul>
+												<li>$59 per DNA testing kit (on discount, regular price $79)</li>
+												<li>DNA matching</li>
+												<li>One of the best family tree builders on the market</li>
+											</ul>
+
+											<p>
+												Like countless other purchases in life, when it comes to ordering a home DNA kit, it’s crucial you determine what’s most important for you. If you’re most interested in family genealogical research, your best bet would be to go with a company like MyHeritage or AncestryDNA. With both of these companies you can also access a massive database of billions of historical records, as well as trace your roots through the family tree builder. In addition, the companies have millions and millions of users in their databases and can match you with relatives, so if you’re looking to find long lost family members, companies like these are your best bet. If you’re looking to learn more about your personal health and also perhaps get tips for nutrition and exercise, then companies like Vitagene, 23andMe and Orig3n may be better options. Other than 23andMe—which combines ancestry mapping with health assessments—the kits aren’t marketed toward users who are interested in deep, extensive genealogical research, rather, they are interested in learning about their health through DNA testing. Finally, you should also consider how important it is to you that the company does more than just autosomal testing and if it travels across enough geographic regions for mapping your ancestry, or if you want a company like GPSorigins which looks at more than 900 geographic regions.
+											</p>
+											<p>
+												Once you’ve gone through the setup process, Zoosk lets you dive right in. You’re automatically shown a profile that matches your basic details. One of Zoosk’s strongest points is its matchmaking algorithm that finds you the best matches
+											</p>
+											<h3>There are 3 ways to get matched:1. Behavioral Matchmaking</h3>
+											<p>
+												Behavioral Matchmaking is kind of like machine learning in the dating field. The system learns your preferences, likes, and dislikes, so it can continuously give you more accurate results. It is one of the most sophisticated ways to find matches and is known to be incredibly successful. Zoosk will send you 1 match a day that you can respond to or decline.
+											</p>
+											<p>
+												<strong>If you have more of a hands-on</strong> approach to dating, you can manually search through Zoosk’s database to find your own matches. This is easy to do; simply click from one profile to the next until you see one that is appealing to you. You can see other members’ profile pics, age, and location to make a quick decision as to whether or not you’re interested in going further. If you are, there are quick messaging options (we’ll discuss that in the communications section below). You can also edit your search to get more specific results, using filters like age, location, distance, ethnicity, and relationship status.
+											</p>
+											<h3>There are 3 ways to get matched:1. Behavioral Matchmaking</h3>
+											<p>
+												Behavioral Matchmaking is kind of like machine learning in the dating field. The system learns your preferences, likes, and dislikes, so it can continuously give you more accurate results. It is one of the most sophisticated ways to find matches and is known to be incredibly successful. Zoosk will send you 1 match a day that you can respond to or decline.
+											</p>
+											<p>
+												<strong>If you have more of a hands-on</strong> approach to dating, you can manually search through Zoosk’s database to find your own matches. This is easy to do; simply click from one profile to the next until you see one that is appealing to you. You can see other members’ profile pics, age, and location to make a quick decision as to whether or not you’re interested in going further. If you are, there are quick messaging options (we’ll discuss that in the communications section below). You can also edit your search to get more specific results, using filters like age, location, distance, ethnicity, and relationship status.
+											</p>
+											<a href="review.html" title="Read the full MyHeritage DNA review" class="linkBlue">Read the full MyHeritage DNA review</a>
+											<div class="itemContainer">
+												<div class="row">
+													<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+														<div class="itemContainerHeading">
+															<div class="itemContainerThumb">
+																<img src="images/content/logos/zoosk70x70.png" alt=""/>
+															</div>
+															<h3>MyHeritageDNA</h3>
+														</div>
+													</div>
+													<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+														<div class="topItemButtonContainer alignRightNotMobile">
+															<a href="#" title="Order now" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Order now</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+										<section id="sec6">
+											<h2>4. MyHeritageDNA</h2>
+											<h3>Tops in discovering origins</h3>
+											<ul>
+												<li>$59 per DNA testing kit (on discount, regular price $79)</li>
+												<li>DNA matching</li>
+												<li>One of the best family tree builders on the market</li>
+											</ul>
+
+											<p>
+												Like countless other purchases in life, when it comes to ordering a home DNA kit, it’s crucial you determine what’s most important for you. If you’re most interested in family genealogical research, your best bet would be to go with a company like MyHeritage or AncestryDNA. With both of these companies you can also access a massive database of billions of historical records, as well as trace your roots through the family tree builder. In addition, the companies have millions and millions of users in their databases and can match you with relatives, so if you’re looking to find long lost family members, companies like these are your best bet. If you’re looking to learn more about your personal health and also perhaps get tips for nutrition and exercise, then companies like Vitagene, 23andMe and Orig3n may be better options. Other than 23andMe—which combines ancestry mapping with health assessments—the kits aren’t marketed toward users who are interested in deep, extensive genealogical research, rather, they are interested in learning about their health through DNA testing. Finally, you should also consider how important it is to you that the company does more than just autosomal testing and if it travels across enough geographic regions for mapping your ancestry, or if you want a company like GPSorigins which looks at more than 900 geographic regions.
+											</p>
+											<p>
+												Once you’ve gone through the setup process, Zoosk lets you dive right in. You’re automatically shown a profile that matches your basic details. One of Zoosk’s strongest points is its matchmaking algorithm that finds you the best matches
+											</p>
+											<h3>There are 3 ways to get matched:1. Behavioral Matchmaking</h3>
+											<p>
+												Behavioral Matchmaking is kind of like machine learning in the dating field. The system learns your preferences, likes, and dislikes, so it can continuously give you more accurate results. It is one of the most sophisticated ways to find matches and is known to be incredibly successful. Zoosk will send you 1 match a day that you can respond to or decline.
+											</p>
+											<p>
+												<strong>If you have more of a hands-on</strong> approach to dating, you can manually search through Zoosk’s database to find your own matches. This is easy to do; simply click from one profile to the next until you see one that is appealing to you. You can see other members’ profile pics, age, and location to make a quick decision as to whether or not you’re interested in going further. If you are, there are quick messaging options (we’ll discuss that in the communications section below). You can also edit your search to get more specific results, using filters like age, location, distance, ethnicity, and relationship status.
+											</p>
+											<h3>There are 3 ways to get matched:1. Behavioral Matchmaking</h3>
+											<p>
+												Behavioral Matchmaking is kind of like machine learning in the dating field. The system learns your preferences, likes, and dislikes, so it can continuously give you more accurate results. It is one of the most sophisticated ways to find matches and is known to be incredibly successful. Zoosk will send you 1 match a day that you can respond to or decline.
+											</p>
+											<p>
+												<strong>If you have more of a hands-on</strong> approach to dating, you can manually search through Zoosk’s database to find your own matches. This is easy to do; simply click from one profile to the next until you see one that is appealing to you. You can see other members’ profile pics, age, and location to make a quick decision as to whether or not you’re interested in going further. If you are, there are quick messaging options (we’ll discuss that in the communications section below). You can also edit your search to get more specific results, using filters like age, location, distance, ethnicity, and relationship status.
+											</p>
+											<a href="review.html" title="Read the full MyHeritage DNA review" class="linkBlue">Read the full MyHeritage DNA review</a>
+											<div class="itemContainer">
+												<div class="row">
+													<div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+														<div class="itemContainerHeading">
+															<div class="itemContainerThumb">
+																<img src="images/content/logos/zoosk70x70.png" alt=""/>
+															</div>
+															<h3>MyHeritageDNA</h3>
+														</div>
+													</div>
+													<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+														<div class="topItemButtonContainer alignRightNotMobile">
+															<a href="#" title="Order now" class="buttonCTA buttonRed widthFull" rel="noopener nofollow" target="_blank">Order now</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</section>
+										<section id="sec7">
+											<h2>DNA Test Kits Compared</h2>
+											<h3>The Basics</h3>
+											<div class="table-responsive">
+												<table class="table table-bordered table-striped" border="0" cellpadding="0" cellspacing="0">
+													<thead>
+														<tr>
+															<th>Company</th>
+															<th>Price</th>
+															<th>Results in</th>
+															<th>Best for</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><a href="#" title="MyHeritageDNA" class="linkBlue" rel="noopener nofollow" target="_blank">MyHeritageDNA</a></td>
+															<td>$59</td>
+															<td>4 weeks</td>
+															<td>Finding family</td>
+														</tr>
+														<tr>
+															<td><a href="#" title="LivingDNA" class="linkBlue" rel="noopener nofollow" target="_blank">LivingDNA</a></td>
+															<td>$59</td>
+															<td>4 weeks</td>
+															<td>Geographical ancestry</td>
+														</tr>
+														<tr>
+															<td><a href="#" title="MyHeritageDNA" class="linkBlue" rel="noopener nofollow" target="_blank">MyHeritageDNA</a></td>
+															<td>$59</td>
+															<td>4 weeks</td>
+															<td>Finding family</td>
+														</tr>
+														<tr>
+															<td><a href="#" title="LivingDNA" class="linkBlue" rel="noopener nofollow" target="_blank">LivingDNA</a></td>
+															<td>$59</td>
+															<td>4 weeks</td>
+															<td>Geographical ancestry</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+											<h3>All About the Test</h3>
+											<div class="table-responsive">
+												<table class="table table-bordered table-striped" border="0" cellpadding="0" cellspacing="0">
+													<thead>
+														<tr>
+															<th>Company</th>
+															<th>Test type</th>
+															<th>Collection type</th>
+															<th>Geo regions</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td><a href="#" title="MyHeritageDNA" class="linkBlue" rel="noopener nofollow" target="_blank">MyHeritageDNA</a></td>
+															<td>Autosomal</td>
+															<td>Cheek swab</td>
+															<td>42+</td>
+														</tr>
+														<tr>
+															<td><a href="#" title="LivingDNA" class="linkBlue" rel="noopener nofollow" target="_blank">LivingDNA</a></td>
+															<td>Autosomal<br/>Mitochondrial<br/>Y-chromosome</td>
+															<td>Cheek swab</td>
+															<td>80</td>
+														</tr>
+														<tr>
+															<td><a href="#" title="MyHeritageDNA" class="linkBlue" rel="noopener nofollow" target="_blank">MyHeritageDNA</a></td>
+															<td>$59</td>
+															<td>4 weeks</td>
+															<td>Finding family</td>
+														</tr>
+														<tr>
+															<td><a href="#" title="LivingDNA" class="linkBlue" rel="noopener nofollow" target="_blank">LivingDNA</a></td>
+															<td>$59</td>
+															<td>4 weeks</td>
+															<td>Geographical ancestry</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</section>
+										<section id="sec8">
+											<h2>Mapping the Story of You</h2>
+											<p>
+												Behavioral Matchmaking is kind of like machine learning in the dating field. The system learns your preferences, likes, and dislikes, so it can continuously give you more accurate results. It is one of the most sophisticated ways to find matches and is known to be incredibly successful. Zoosk will send you 1 match a day that you can respond to or decline.
+											</p>
+											<p>
+												If you have more of a hands-on approach to dating, you can manually search through Zoosk’s database to find your own matches. This is easy to do; simply click from one profile to the next until you see one that is appealing to you. You can see other members’ profile pics, age, and location to make a quick decision as to whether or not you’re interested in going further. If you are, there are quick messaging options (we’ll discuss that in the communications section below). You can also edit your search to get more specific results, using filters like age, location, distance, ethnicity, and relationship status.
+											</p>
+											<p>
+												Now that you’ve read more about what the DNA testing industry can provide you, it’s time to get comfortable and find the test that really speaks to you. Genealogy is a fascinating hobby, and it's also a very personal one. You may be more interested in health information than detailed ethnic history, you may want to go deep on genealogical records and track down family relatives across a vast family tree, or you may just want to learn solely about your ethnic makeup. This is a journey that you call the shots on.
+											</p>
+											<p>
+												You also may find that you can use the DNA information and tools as a sort of jumping off spot for building a full-on family tree. Luckily, a number of companies can set you up with an extensive, intuitive digital family tree which you can update in a flash and even use to meet other relatives online. 
+											</p>
+										</section>
+									</article>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						<section class="rightColumnContainer">
+							<aside>
+								<h2 class="sectionHeading">Best Dating Sites</h2>
+								<div class="asideGreyBlock">
+									<a href="#" target="_blank" rel="noopener nofollow">
+										<div class="asideBestItem">
+											<div class="asideBestItemThumb">
+												<img src="images/content/logos/zoosk70x70.png" alt=""/>
+											</div>
+											<h3>Zoosk</h3>
+											<div class="arrowContainer">
+												<span class="spriteSmallIcons arrowRight"></span>
+											</div>
+										</div>
+									</a>
+									<a href="#" target="_blank" rel="noopener nofollow">
+										<div class="asideBestItem">
+											<div class="asideBestItemThumb">
+												<img src="images/content/logos/zoosk70x70.png" alt=""/>
+											</div>
+											<h3>Zoosk</h3>
+											<div class="arrowContainer">
+												<span class="spriteSmallIcons arrowRight"></span>
+											</div>
+										</div>
+									</a>
+									<a href="#" target="_blank" rel="noopener nofollow">
+										<div class="asideBestItem">
+											<div class="asideBestItemThumb">
+												<img src="images/content/logos/zoosk70x70.png" alt=""/>
+											</div>
+											<h3>Zoosk</h3>
+											<div class="arrowContainer">
+												<span class="spriteSmallIcons arrowRight"></span>
+											</div>
+										</div>
+									</a>
+									<a href="#" target="_blank" rel="noopener nofollow">
+										<div class="asideBestItem">
+											<div class="asideBestItemThumb">
+												<img src="images/content/logos/zoosk70x70.png" alt=""/>
+											</div>
+											<h3>Zoosk</h3>
+											<div class="arrowContainer">
+												<span class="spriteSmallIcons arrowRight"></span>
+											</div>
+										</div>
+									</a>
+									<a href="#" target="_blank" rel="noopener nofollow">
+										<div class="asideBestItem">
+											<div class="asideBestItemThumb">
+												<img src="images/content/logos/zoosk70x70.png" alt=""/>
+											</div>
+											<h3>Zoosk</h3>
+											<div class="arrowContainer">
+												<span class="spriteSmallIcons arrowRight"></span>
+											</div>
+										</div>
+									</a>
+									<div class="asideItemButtonContainer">
+										<a href="category.html" title="Compare all" class="buttonCTA buttonBlack widthFull">Compare all</a>
+									</div>
+								</div>
+							</aside>
+							<aside>
+								<h2 class="sectionHeading">Must Reads</h2>
+								<div class="asideGreyBlock">
+									<a href="article.html">
+										<div class="asideMustReadItem">
+											<div class="asideMustReadThumb">
+												<img src="images/content/household-thumb.jpg" alt=""/>
+											</div>
+											<h3>The Best Home Warranty for A/C and Heating</h3>
+										</div>
+									</a>
+									<a href="article.html">
+										<div class="asideMustReadItem">
+											<div class="asideMustReadThumb">
+												<img src="images/content/household-thumb.jpg" alt=""/>
+											</div>
+											<h3>The Best Home Warranty for A/C and Heating</h3>
+										</div>
+									</a>
+									<a href="article.html">
+										<div class="asideMustReadItem">
+											<div class="asideMustReadThumb">
+												<img src="images/content/household-thumb.jpg" alt=""/>
+											</div>
+											<h3>The Best Home Warranty for A/C and Heating</h3>
+										</div>
+									</a>
+									<a href="#" title="Read all articles" class="linkBlue">Read all articles</a>
+								</div>
+							</aside>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="sectionBottom sectionGreyContainer">
+		<div class="wrapper">
+			<div class="reviewsContainer">
+				<header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<h2>Recommended Reviews</h2>
+						</div>
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+							<div class="alignRightNotMobile">
+								<a href="#" title="Show more" class="linkBlue">Show more</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="reviewContainer">
+								<div class="reviewLogoContainer">
+									<img src="images/content/logos/match.png" alt=""/>
+								</div>
+								<p>Better chances of finding someone who's just your style</p>
+								<div class="reviewButtonContainer">
+									<a href="#" title="Read Review" class="buttonCTA buttonRed widthFull">Read Review</a>
+									<a href="#" title="Visit Site" class="linkBlue" rel="noopener nofollow" target="_blank">Visit Site</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="reviewContainer">
+								<div class="reviewLogoContainer">
+									<img src="images/content/logos/match.png" alt=""/>
+								</div>
+								<p>Better chances of finding someone who's just your style</p>
+								<div class="reviewButtonContainer">
+									<a href="#" title="Read Review" class="buttonCTA buttonRed widthFull">Read Review</a>
+									<a href="#" title="Visit Site" class="linkBlue" rel="noopener nofollow" target="_blank">Visit Site</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="reviewContainer">
+								<div class="reviewLogoContainer">
+									<img src="images/content/logos/match.png" alt=""/>
+								</div>
+								<p>Better chances of finding someone who's just your style</p>
+								<div class="reviewButtonContainer">
+									<a href="#" title="Read Review" class="buttonCTA buttonRed widthFull">Read Review</a>
+									<a href="#" title="Visit Site" class="linkBlue" rel="noopener nofollow" target="_blank">Visit Site</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+							<div class="reviewContainer">
+								<div class="reviewLogoContainer">
+									<img src="images/content/logos/match.png" alt=""/>
+								</div>
+								<p>Better chances of finding someone who's just your style</p>
+								<div class="reviewButtonContainer">
+									<a href="#" title="Read Review" class="buttonCTA buttonRed widthFull">Read Review</a>
+									<a href="#" title="Visit Site" class="linkBlue" rel="noopener nofollow" target="_blank">Visit Site</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="sectionBottom">
+		<div class="wrapper2">
+			<div class="categoriesContainer">
+				<header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+							<h2>Explore more optimus10.com Categories</h2>
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<div class="alignRightNotMobile">
+								<a href="#" title="View all shortlists" class="linkBlue">View all shortlists</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/finance-icon.svg" alt="Finance"/>
+								</div>
+								<h3>Finance</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/psychic-icon.svg" alt="Psychic"/>
+								</div>
+								<h3>Psychic</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/tech-icon.svg" alt="Tech"/>
+								</div>
+								<h3>Tech</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/lifestyle-icon.svg" alt="Lifestyle"/>
+								</div>
+								<h3>Lifestyle</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/finance-icon.svg" alt="Entertainment"/>
+								</div>
+								<h3>Entertainment</h3>
+							</div>
+							</a>
+						</div>
+						<!-- second row             -->
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/finance-icon.svg" alt="Finance"/>
+								</div>
+								<h3>Finance</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/psychic-icon.svg" alt="Psychic"/>
+								</div>
+								<h3>Psychic</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/tech-icon.svg" alt="Tech"/>
+								</div>
+								<h3>Tech</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/lifestyle-icon.svg" alt="Lifestyle"/>
+								</div>
+								<h3>Lifestyle</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/finance-icon.svg" alt="Entertainment"/>
+								</div>
+								<h3>Entertainment</h3>
+							</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer id="mainFooter">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-lg-push-3 col-md-push-3">
+						<nav>
+							<ul class="footerNavigation">
+								<li><a href="#" title="About us">About us</a></li>
+								<li><a href="#" title="Advertising Disclosure">Advertising Disclosure</a></li>
+								<li><a href="#" title="Terms of Use">Terms of Use</a></li>
+								<li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+								<li><a href="#" title="Partner with us">Partner with us</a></li>
+								<li><a href="#" title="Contact">Contact</a></li>
+							</ul>
+							<p>
+								Designed to help users make confident decisions online, this website contains information about a wide range of products and services. Certain details, including but not limited to prices and special offers, are provided to us directly from our partners and are dynamic and subject to change at any time without prior notice. Though based on meticulous research, the information we share does not constitute legal or professional advice or forecast, and should not be treated as such.
+							</p>
+							<p>
+								Reproduction in whole or in part is strictly prohibited.
+							</p>
+						</nav>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-lg-pull-9 col-md-pull-9">
+						<p>
+							<img src="images/optimus10-logo-black.png" alt="optimus10.com logo"/>
+						</p>
+						<p>
+							Copyright &copy; 2009-2019 optimus10.com
+							All Rights Reserved.
+						</p>
+						<p> 
+							By using our content, products & services you agree to our <a href="#" title="">Terms of Service</a> and <a href="#" title="">Privacy Policy</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+	<script>
+		// Sticky Left Menu
+		$(document).ready(function () {
+			let mainNavLinks = document.querySelectorAll("#stickyNavigation nav ul li a");
+			let mainSections = document.querySelectorAll(".articleContainer section");
+			let navbar = document.getElementById("stickyNavigationContainer");
+			//let stickit = navbar.offsetTop;
+
+			let lastId;
+			let cur = [];
+
+			// This should probably be throttled.
+			// Especially because it triggers during smooth scrolling.
+			// https://lodash.com/docs/4.17.10#throttle
+			// You could do like...
+			// window.addEventListener("scroll", () => {
+			//    _.throttle(doThatStuff, 100);
+			// });
+			// Only not doing it here to keep this Pen dependency-free.
+
+			window.addEventListener("scroll", event => {
+			  let fromTop = window.scrollY;
+			  if( fromTop < 140){
+				 $("#stickyNavigationContainer").css({"position":"relative","top":"auto"});
+			  }
+			  if(( fromTop > 140)&&(fromTop < $(".articleContainer").innerHeight()-500)){
+				 $("#stickyNavigationContainer").css({"position":"fixed","top":"0"});
+			  } 
+			  if(( fromTop > $(".articleContainer").innerHeight()-500)){
+				  $("#stickyNavigationContainer").css({"position":"absolute","top":$(".articleContainer").innerHeight()-700});
+			  }
+
+
+			  mainNavLinks.forEach(link => {
+				let section = document.querySelector(link.hash);
+
+				if (
+				  section.offsetTop <= fromTop &&
+				  section.offsetTop + section.offsetHeight > fromTop
+				) {
+				  link.classList.add("current");
+				  link.focus();
+				} else {
+				  link.classList.remove("current");
+				}
+			  });
+			});
+			
+		});
+		
+	</script>
+</body>
+</html>
