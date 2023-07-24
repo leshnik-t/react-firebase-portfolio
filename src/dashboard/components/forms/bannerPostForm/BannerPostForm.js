@@ -1,19 +1,12 @@
-import ButtonFormGroup from '../../buttonformgroup/ButtonFormGroup';
-
 const BannerPostForm = ({
     handleChangeInput, 
     handleSubmit, 
     item,
     percentage, 
     isEditing,
-    buttons,
-    handleAddButton,
-    handleDeleteButton
 }) => {
     const buttonText = isEditing ? 'Submit changes' : 'Add post';
     const altValue = item.img ? item.img.alt : item.img || '';
-    const btn1text = item.btn1 ? item.btn1.text : item.btn1 || '';
-    const btn1link = item.btn1 ? item.btn1.link : item.btn1 || '';
 
     return (
         <form onSubmit={(e) => handleSubmit(e)}>
@@ -89,57 +82,6 @@ const BannerPostForm = ({
                     onChange={(e) => handleChangeInput(e)}
                     value={item.title || ''}
                 />
-            </div>
-            <div className="mb-3">
-                <label 
-                    htmlFor="btn1text"
-                    className="form-label"
-                >
-                    Button 1:
-                </label>
-                <div className="input-group">
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        id="btn1text" 
-                        placeholder="Enter btn1 text"
-                        aria-required="true"
-                        required
-                        onChange={(e) => handleChangeInput(e)}
-                        value={btn1text}
-                    />
-                    <input 
-                        type="text" 
-                        className="form-control" 
-                        id="btn1link" 
-                        placeholder="Enter button link 1"
-                        aria-required="true"
-                        required
-                        onChange={(e) => handleChangeInput(e)}
-                        value={btn1link}
-                        title="Button Link 1"
-                    />
-                </div>
-            </div>
-            <div className="mb-5">
-                <div className="mb-3">  
-                    <button 
-                        type="button"
-                        onClick={(e) => handleAddButton(e)}
-                        className="btn btn-success"
-                    >
-                        Add Button
-                    </button>
-                </div>
-                {(buttons.length > 0) && buttons.map((button) => 
-                    <ButtonFormGroup
-                        key={button.id} 
-                        id={button.id}
-                        item={item} 
-                        handleChangeInput={handleChangeInput}
-                        handleDeleteButton={handleDeleteButton}
-                    />
-                )}
             </div>
             <button 
                 disabled={percentage !== null} 
