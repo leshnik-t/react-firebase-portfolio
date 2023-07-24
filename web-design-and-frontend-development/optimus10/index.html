@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="rating" content="general">
+    <meta name="revisit-after" content="1day">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+	<link href="css/niceCountryInput.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+	<title>Optimus10.com : Home</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src="js/niceCountryInput.js"></script>
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-default">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="wrapper">
+				<div class="navbar-header">
+					  <button type="button" class="navbar-toggle collapsed hidden-xs" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					  </button>
+					  <a class="navbar-brand" href="index.html" style="z-index: 10000;">
+						  <img src="images/optimus10-logo.png" alt="optimus10.com logo"/>
+					  </a>
+				</div>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<div class="wrapper">
+					<ul class="nav navbar-nav navbar-right-top-menu">
+						<li class="menuBtnRight">
+							<div id="countryPicker" data-selectedcountry="GB" data-showspecial="false"
+								data-showflags="true" data-i18nall="All selected" data-i18nnofilter="No selection" 
+								data-i18nfilter="Filter" data-onchangecallback="onChangeCallback">
+							</div>
+							<script>
+								function onChangeCallback(ctr){
+									console.log("The country was changed: " + ctr);
+								}
+								$(document).ready(function () {
+									new NiceCountryInput($("#countryPicker")).init();
+									$(document).click(function (e) {
+										e.stopPropagation();
+										var container = $("#countryPicker");
+										
+										//check if the clicked area is CountryPicker or not
+										if (container.has(e.target).length === 0) {
+											$(".niceCountryInputMenuFilter").hide();
+											$(".niceCountryInputMenuDropdownContent").hide();
+											
+										}
+										
+									})
+									$(".dropdown-toggle").on("click",function () {
+																		
+										//hide countryPicker dropdown if another toglledown button is clicked
+										if ($(".niceCountryInputMenuFilter").css("display")==="block") {
+											$(".niceCountryInputMenuFilter").hide();
+											$(".niceCountryInputMenuDropdownContent").hide();
+											
+										}
+										
+									})
+								});
+							</script>
+					 	</li>
+						<li class="dropdown menuBtnRight">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="text-uppercase">Categories</span><span class="spriteSmallIcons arrow"></span></a>
+						  <ul class="dropdown-menu">
+							<li><a href="#">Action</a></li>
+							<li><a href="#">Another action</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>
+						  </ul>
+						</li>
+				  	</ul>
+					
+				</div>
+				<div class="clearfix"></div>	
+				<!-- begin submenu         -->
+				<!--<div class="submenuTopLine"></div>
+				<div class="wrapper clearfix">
+					<div class="container-fluid">
+						<div class="submenuHeader">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="#">Top10 Dating <span class="sr-only">(current)</span></a></li>
+								<li><a href="#">Over 50</a></li>
+								<li><a href="#">Gays</a></li>
+								<li><a href="#">Professionals</a></li>
+								<li><a href="#">Black Singles</a></li>
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="spriteSmallIcons arrow"></span></a>
+								  <ul class="dropdown-menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">One more separated link</a></li>
+								  </ul>
+								</li>
+							  </ul>
+							  <ul class="nav navbar-nav navbar-right">
+								<li><a href="review.html">Review</a></li>
+								<li><a href="article.html">Top Reads</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle lastItemMenu" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compare<span class="spriteSmallIcons arrow"></span></a>
+									  <ul class="dropdown-menu">
+										<li><a href="#">Action</a></li>
+										<li><a href="#">Another action</a></li>
+										<li><a href="#">Something else here</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">Separated link</a></li>
+										<li role="separator" class="divider"></li>
+										<li><a href="#">One more separated link</a></li>
+									  </ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div><!-- end submenu      -->
+					
+			</div><!-- /.navbar-collapse -->
+		</nav>
+	</header>
+	<section class="hero">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+						<hgroup>
+							<h1><span class="textRed">Choose</span> from the best<span class="textRed">.</span></h1>
+							<h2>We find the Top10, you pick the one that works for you.</h2>
+						</hgroup>
+						<div id="categoriesHeroContainer">
+							<div class="row">
+								<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+									<a href="category.html" class="categoryLink">
+									<div class="categoryItemContainer">
+										<div class="categoryItemImageContainer">
+											<img src="images/categories/finance-icon.svg" alt="Finance"/>
+										</div>
+										<h3>Finance</h3>
+									</div>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+									<a href="category.html" class="categoryLink">
+									<div class="categoryItemContainer">
+										<div class="categoryItemImageContainer">
+											<img src="images/categories/psychic-icon.svg" alt="Psychic"/>
+										</div>
+										<h3>Psychic</h3>
+									</div>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+									<a href="category.html" class="categoryLink">
+									<div class="categoryItemContainer">
+										<div class="categoryItemImageContainer">
+											<img src="images/categories/tech-icon.svg" alt="Tech"/>
+										</div>
+										<h3>Tech</h3>
+									</div>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+									<a href="category.html" class="categoryLink">
+									<div class="categoryItemContainer">
+										<div class="categoryItemImageContainer">
+											<img src="images/categories/lifestyle-icon.svg" alt="Lifestyle"/>
+										</div>
+										<h3>Lifestyle</h3>
+									</div>
+									</a>
+								</div>
+								<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 hidden-xs">
+									<a href="category.html" class="categoryLink">
+									<div class="categoryItemContainer">
+										<div class="categoryItemImageContainer">
+											<img src="images/categories/entertainment-icon.svg" alt="Entertainment"/>
+										</div>
+										<h3>Entertainment</h3>
+									</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="mainHomeContainer">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+						<section class="topItemsContainer">
+							<h2 class="sectionHeading">Trending <span class="textRed">Top10</span> lists</h2>
+							<!--            begin 01 item              -->
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>01</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<!--            end 01 item              -->
+							<!---     begin all itmes           -->
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>02</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>03</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>04</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>05</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>06</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>07</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>08</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>09</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+							<a href="review.html" data-role="top-item" data-item-category="household">
+								<div class="topItemContainer">
+									<div class="row">
+										<div class="col-xs-3 col-sm-1 col-md-1 col-lg-1">
+											<div class="topItemNumContainer">
+												<span>10</span>
+											</div>
+										</div>
+										<div class="col-xs-9 col-sm-4 col-md-4 col-lg-4 col-lg-push-7 col-md-push-7 col-sm-push-7">
+											<div class="topItemImageContainer">
+												<span class="topItemCategory">Household</span>
+												<span class="blackFilter"></span>
+												<img src="images/content/household-230x130.jpg" alt=""/>
+											</div>
+										</div>
+										<div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-lg-pull-4 col-md-pull-4 col-sm-pull-4">
+											<div class="topItemDescContainer">
+												<h3>Top 10 <span class="textRed">Meal Deliver</span> Plans</h3>
+												<p>Get fresh ingredients for easy recipes delivered to your doorstep</p>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</a>
+								<!---     end all itmes           -->
+						</section>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+						<section class="rightColumnContainer">
+							<aside>
+								<h2 class="sectionHeading">Must Reads</h2>
+								<div class="asideGreyBlock">
+									<a href="article.html">
+										<div class="asideMustReadItem">
+											<div class="asideMustReadThumb">
+												<img src="images/content/household-thumb.jpg" alt=""/>
+											</div>
+											<h3>The Best Home Warranty for A/C and Heating</h3>
+										</div>
+									</a>
+									<a href="article.html">
+										<div class="asideMustReadItem">
+											<div class="asideMustReadThumb">
+												<img src="images/content/household-thumb.jpg" alt=""/>
+											</div>
+											<h3>The Best Home Warranty for A/C and Heating</h3>
+										</div>
+									</a>
+									<a href="article.html">
+										<div class="asideMustReadItem">
+											<div class="asideMustReadThumb">
+												<img src="images/content/household-thumb.jpg" alt=""/>
+											</div>
+											<h3>The Best Home Warranty for A/C and Heating</h3>
+										</div>
+									</a>
+								</div>
+							</aside>
+							<aside class="asideWhiteBlock">
+								<div class="whyContainer">
+									<h3>Why <span class="textRed">optimus10.com</span>?</h3>
+									<div>
+										<h4 class="textRed"><span><img src="images/check.svg" alt="check" width="40" height="40"/></span> Compare.</h4>
+										<p>We find the 10 best options.</p>
+									</div>
+									<div>
+										<h4 class="textRed"><span><img src="images/check.svg" alt="check" width="40" height="40"/></span> Choose.</h4>
+										<p>So you make decisions with ease.</p>
+									</div>
+									<div>
+										<h4 class="textRed"><span><img src="images/check.svg" alt="check" width="40" height="40"/></span> Celebrate.</h4>
+										<p>Simple, right?</p>
+									</div>
+								</div>
+							</aside>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="sectionBottom sectionGreyContainer">
+		<div class="wrapper2">
+			<div class="categoriesContainer">
+				<header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+							<h2>Explore more optimus10.com Categories</h2>
+						</div>
+						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+							<div class="alignRightNotMobile">
+								<a href="#" title="View all shortlists" class="linkBlue">View all shortlists</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</header>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/finance-icon.svg" alt="Finance"/>
+								</div>
+								<h3>Finance</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/psychic-icon.svg" alt="Psychic"/>
+								</div>
+								<h3>Psychic</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/tech-icon.svg" alt="Tech"/>
+								</div>
+								<h3>Tech</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/lifestyle-icon.svg" alt="Lifestyle"/>
+								</div>
+								<h3>Lifestyle</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/entertainment-icon.svg" alt="Entertainment"/>
+								</div>
+								<h3>Entertainment</h3>
+							</div>
+							</a>
+						</div>
+						<!-- second row             -->
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/household-icon.svg" alt="Finance"/>
+								</div>
+								<h3>Household</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/shopping-icon.svg" alt="Psychic"/>
+								</div>
+								<h3>Shopping</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/personal-growth-icon.svg" alt="Tech"/>
+								</div>
+								<h3>Personal growth</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/family-icon.svg" alt="Lifestyle"/>
+								</div>
+								<h3>Family</h3>
+							</div>
+							</a>
+						</div>
+						<div class="col-xs-6 col-sm-2 col-md-2 col-lg-2">
+							<a href="category.html" class="categoryLink">
+							<div class="categoryItemContainer">
+								<div class="categoryItemImageContainer">
+									<img src="images/categories/dating-icon.svg" alt="Entertainment"/>
+								</div>
+								<h3>Dating</h3>
+							</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer id="mainFooter">
+		<div class="wrapper">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-lg-push-3 col-md-push-3">
+						<nav>
+							<ul class="footerNavigation">
+								<li><a href="#" title="About us">About us</a></li>
+								<li><a href="#" title="Advertising Disclosure">Advertising Disclosure</a></li>
+								<li><a href="#" title="Terms of Use">Terms of Use</a></li>
+								<li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+								<li><a href="#" title="Partner with us">Partner with us</a></li>
+								<li><a href="#" title="Contact">Contact</a></li>
+							</ul>
+							<p>
+								Designed to help users make confident decisions online, this website contains information about a wide range of products and services. Certain details, including but not limited to prices and special offers, are provided to us directly from our partners and are dynamic and subject to change at any time without prior notice. Though based on meticulous research, the information we share does not constitute legal or professional advice or forecast, and should not be treated as such.
+							</p>
+							<p>
+								Reproduction in whole or in part is strictly prohibited.
+							</p>
+						</nav>
+					</div>
+					<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-lg-pull-9 col-md-pull-9">
+						<p>
+							<img src="images/optimus10-logo-black.png" alt="optimus10.com logo"/>
+						</p>
+						<p>
+							Copyright &copy; 2009-2019 optimus10.com
+							All Rights Reserved.
+						</p>
+						<p> 
+							By using our content, products & services you agree to our <a href="#" title="">Terms of Service</a> and <a href="#" title="">Privacy Policy</a>.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

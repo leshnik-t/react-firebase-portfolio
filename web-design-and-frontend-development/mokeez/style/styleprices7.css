@@ -1,0 +1,181 @@
+@charset "utf-8";
+/* CSS Document */
+.plancell{
+	background-color:#00afef !important;
+	color:#ffffff;
+}
+.hero hgroup{
+	margin-bottom:0px;
+}
+.plans .row > div{
+	padding-left:0px;
+	padding-right:0px;
+}
+.plans .row{
+	margin-left:0px;
+	margin-right:0px;
+}
+.row1,.row2,.row3, .row4, .row5{
+	min-height:40px;
+	background-color:#ffffff;
+	border-bottom:1px solid #cdf0fe;
+	padding:10px;
+	position:relative;
+}
+.row1{
+	min-height:68px;
+}
+.row3{
+	min-height:59px;
+}
+.headingBlue{
+	background-color:#f5fcfe;
+}
+.row1 > span{
+	font-size:18px;
+	font-weight:bold;
+	display:block;
+}
+.tableicons{
+	width:12px;
+	height:11px;
+	background-image:url(../images/tableicons.png);
+	display:inline-block;
+}
+.tableicons.no{
+	background-position:0px 0px;
+}
+.tableicons.yes{
+	background-position:-12px 0px;
+}
+.mobileHeading{
+	font-size:13px;
+	padding-top:5px;
+	position:relative;
+}
+.additionalBlock{
+	margin-bottom:30px;
+}
+.additionalBlock h2{
+	margin-bottom:15px;
+}
+.smallText{
+	padding-top:15px;
+	font-size:14px;
+}
+.planContainer{
+	border-right:1px solid #cdf0fe;
+	border-top:1px solid #cdf0fe;
+}
+.planContainer h3{
+	font-size:18px;
+}
+.tooltipContainer{
+	position:absolute;
+	display:block;
+	padding:2px 5px;
+	color:#ffffff;
+	background-color:#a9a9a9;
+	font-size:8px;
+	line-height:8px;
+	right:5px;
+	top:13px;
+	cursor:pointer;
+	font-style:italic;
+	font-weight:bold;
+	font-family:Georgia, serif;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.tooltip-inner{
+	font-size:11px;
+	line-height:1.2;
+	min-width:100px;
+}
+.headingsColumn{
+	border-top:1px solid transparent;
+	border-right:1px solid #cdf0fe;
+	border-left:1px solid #cdf0fe;
+}
+.headingsColumn:last-child{
+	border-top:1px solid #cdf0fe;
+}
+.headingsColumn > div.headingBlue, .headingsColumn > div.row2, .headingsColumn > div.row1{
+	padding-right:22px;
+}
+.buttonResponsive{
+	text-align:center;
+	min-height:45px;
+	margin:10px 0px 30px 0px;
+}
+.buttonResponsive > a{
+	display:block;
+	width:90%;
+	margin:0px auto;
+	padding:12px 0px;
+	font-size:14px;
+}
+.modal-title{
+	font-size:20px;
+}
+.modal-header {
+	background-color:#00afef;
+	color:#ffffff;
+    border-bottom: 1px solid #cdf0fe;
+	-webkit-border-top-left-radius: 4px;
+	-webkit-border-top-right-radius: 4px;
+	-moz-border-radius-topleft: 4px;
+	-moz-border-radius-topright: 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.close{
+	opacity:0.5;
+}
+.planDetailsButton{
+	margin-top:-20px;
+	margin-bottom:40px;
+	color:#00afef;
+	text-decoration:underline;
+}
+#startDetails, #smallDetails, #standartDetails,
+#pro1Details, #pro2Details, #unlimitedDetails{
+	display:block;
+}
+@media (max-width: 767px){
+	.planContainer{
+		border:1px solid #cdf0fe;
+		margin-bottom:30px;
+	}
+	.plans .row > div{
+		padding-left:15px;
+		padding-right:15px;
+	}
+	.tooltipContainer{
+		top:3px;
+	}
+	#startDetails, #smallDetails, #standartDetails,
+	#pro1Details, #pro2Details, #unlimitedDetails{
+		display:none;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px){
+	.row4,.row5{
+		min-height:59px;	
+	}
+	.row3{
+		min-height:78px;
+	}
+	.row2{
+		min-height:59px;
+	}
+	.row1{
+		min-height:84px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1160px){
+	.row5{
+		min-height:59px;	
+	}
+}
