@@ -62,7 +62,7 @@ const EmailPost = ({ item }) => {
         <section className="secondary-section post-item email-post" id={item.orderName}>
             <h2>{item.title}</h2>
             <p><span>Industry:</span> {item.industry}</p>
-            <p><span>Technology Leveraged:</span>{item.technology}</p>
+            <p><span>Technology Leveraged:</span> {item.technology}</p>
             <div className="container-buttons-inline">
                 {(buttonsList.length > 0) && buttonsList}
             </div>
