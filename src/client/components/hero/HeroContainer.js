@@ -1,6 +1,7 @@
 import './hero-container.css';
 import SocialLinks from '../sociallinks/SocialLinks';
 import { Link } from 'react-router-dom';
+import { SiAdobecreativecloud, SiAdobephotoshop, SiAdobeillustrator, SiAdobeaftereffects, SiAdobepremierepro  } from "react-icons/si";
 
 const HeroContainer = () => {
     return (
@@ -28,6 +29,17 @@ const HeroContainer = () => {
                         </div>
                         <div className="hero-image-tablet-mobile"></div>
                         <div className="hero-description">
+                            <div className="row">
+                                <div className="col-12 col-md-12 col-lg-12">
+                                    <div className="design-icons-container">
+                                        <SiAdobecreativecloud className="icon-creative-cloud"/>
+                                        <SiAdobephotoshop className="icon-photoshop"/>
+                                        <SiAdobeillustrator className="icon-illustrator"/>
+                                        <SiAdobeaftereffects className="icon-after-effects"/>
+                                        <SiAdobepremierepro className="icon-premiere"/>
+                                    </div>
+                                </div>
+                            </div>
                             <div className="row">
                                 <div className="col-12 col-md-6 col-lg-6">
                                 <p><strong>Languages:</strong> JavaScript, HTML, CSS</p>

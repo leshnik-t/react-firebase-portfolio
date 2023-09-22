@@ -46,6 +46,42 @@ p.hero-text-lg {
 .hero-description p {
     margin: 0rem;
 }
+.hero-description .design-icons-container {
+    margin: 1rem 0rem 2rem 0rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.hero-description .design-icons-container > svg {
+    font-size: 2.0rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.icon-creative-cloud {
+    color: #DB1F29;
+}
+.icon-photoshop {
+    color: #051e35;
+    background-color: #4ea7fa;
+}
+.icon-illustrator {
+    color: #2f0401;
+    background-color: #f49f2f;
+}
+.icon-after-effects {
+    color: #000458;
+    background-color: #979bfa;
+}
+.icon-premiere {
+    color: #000458;
+    background-color: #979bfa;
+}
+
 
 @media screen and (max-width:991px) {
     .hero-content {
@@ -55,6 +91,9 @@ p.hero-text-lg {
     }
     .hero-links{
         margin-bottom: 3rem;
+    }
+    .hero-description .design-icons-container {
+        justify-content: center;
     }
 }
 
